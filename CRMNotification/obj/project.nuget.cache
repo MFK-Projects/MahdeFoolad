@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "c08TF+6acrQNyXyrHrRDVfeFeph8GdSFmiRCLJIGY3lAsomrA4ERQSN7YSgcQsDpCsofHGRb6//Cr+/rCQyDsA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\CRMNotification\\MahdeFooladApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
