@@ -9,6 +9,10 @@ namespace NSMangament.Application.Services
 {
     public interface IUserMananger
     {
-        UserModel User { get; set; }
+        UserModel User { get; }
+        Task<bool> CheckPassword(string pasword);
+        Task<bool> ChecckPassword(string userName, string password);
+
+
     }
 }
