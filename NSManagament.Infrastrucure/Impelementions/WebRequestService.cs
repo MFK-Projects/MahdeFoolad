@@ -10,40 +10,44 @@ namespace NSManagament.Infrastrucure.Impelementions
 {
     public class WebRequestService : IWebRequest
     {
-
         private readonly WebClient _client;
         private bool _disposed;
+        private readonly IUserMananger _userManager;
+
         public WebRequestService(IUserMananger userManager)
         {
+            _userManager = userManager;
             _client = new WebClient();
         }
-
-
-        public Task<bool> SendHttpRequest(string url)
+        public async Task<string> DownlaodStringData(string url)
         {
             if (string.IsNullOrEmpty(url))
-                return Task.FromResult(false);
+                return await Task.FromResult(string.Empty);
 
-            
+            _client.Credentials = new NetworkCredential(
+                _userManager.User.CredentialName,
+                _userManager.User.Password,
+                "KIAN"
+                );
+            _client.Headers.Add("OData-Version", "4.0");
+
+            return await Task.FromResult(_client?.DownloadString(new Uri(url)));
         }
 
-        public Task<bool> SendHttpRequest(string , string password)
+        public async Task<string> DownlaodStringData(string url, string password)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(password))
+                return await Task.FromResult(string.Empty);
+
+            _client.Credentials = new NetworkCredential(
+                _userManager.User.CredentialName,
+                password,
+                "KIAN"
+                );
+            _client.Headers.Add("OData-Version", "4.0");
+
+            return await Task.FromResult(_client?.DownloadString(new Uri(url)));
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public void Dispose()

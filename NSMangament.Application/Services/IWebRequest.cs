@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NSMangament.Application.Services
 {
-    public interface IWebRequest:IDisposable
+    public interface IWebRequest : IDisposable
     {
-       Task<bool> SendHttpRequest(string url);
-       Task<bool> SendHttpRequest(string, string password);
+        Task<string> DownlaodStringData(string url);
+        Task<string> DownlaodStringData(string url, string password);
     }
 }
