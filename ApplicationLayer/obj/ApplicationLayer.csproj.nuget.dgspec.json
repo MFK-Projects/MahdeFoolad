@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\ApplicationLayer\\ApplicationLayer.csproj": {}
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\ApplicationLayer\\ApplicationLayer.csproj": {
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\ApplicationLayer\\ApplicationLayer.csproj",
+        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
         "projectName": "ApplicationLayer",
-        "projectPath": "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\ApplicationLayer\\ApplicationLayer.csproj",
+        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
         "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\a.moradi\\Downloads\\New folder\\FinalNotificationApp\\ApplicationLayer\\obj\\",
+        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",

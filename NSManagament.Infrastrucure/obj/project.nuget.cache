@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "fv5YJoKLgABRLr3eQgsZAERbMfTRrB15r004k0SMrtGEIs2NfWg1IWAuAA1E79fLwXYcnupGwEPnnD3CZhIccg==",
+  "success": false,
+  "projectFilePath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project NSMangament.Application is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project NSMangament.Application supports: net5.0-windows10.0.17763 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "NSMangament.Application",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

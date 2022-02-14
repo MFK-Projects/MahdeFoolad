@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4822c94d-ebc7-423f-ad34-0f288f45f29c": {
+      "ProjectGuid": "4822c94d-ebc7-423f-ad34-0f288f45f29c",
+      "DisplayName": "InfrastrucureLayer",
+      "ColorIndex": 0
+    },
+    "f79156e0-c24d-4f78-ab5c-13a19373dd5a": {
+      "ProjectGuid": "f79156e0-c24d-4f78-ab5c-13a19373dd5a",
+      "DisplayName": "ApplicationLayer",
+      "ColorIndex": 1
+    },
+    "245b9a4e-53dd-4e7f-9f3f-c6da690e9fd1": {
+      "ProjectGuid": "245b9a4e-53dd-4e7f-9f3f-c6da690e9fd1",
+      "DisplayName": "NSMangament.Application",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

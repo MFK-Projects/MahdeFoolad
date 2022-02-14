@@ -1,0 +1,101 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "NSMangament.Application/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/NSMangament.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NSMangament.Application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NSMangament.Application/1.0.0": {
+      "type": "project",
+      "path": "../NSMangament.Application/NSMangament.Application.csproj",
+      "msbuildProject": "../NSMangament.Application/NSMangament.Application.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "NSMangament.Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\a.moradi\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+      "projectName": "NSManagament.Infrastrucure",
+      "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+      "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
+              "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project NSMangament.Application is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project NSMangament.Application supports: net5.0-windows10.0.17763 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "NSMangament.Application",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
