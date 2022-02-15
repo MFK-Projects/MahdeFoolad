@@ -12,4 +12,16 @@ namespace NSMangament.Application.Enums
         UniqIdentifire,
         Number
     }
+
+    public enum TaskStatus
+    {
+        Seen,
+        Done,
+        Expired,
+        Assigned
+    }
+    public enum TaskType
+    {
+       
+    }
 }

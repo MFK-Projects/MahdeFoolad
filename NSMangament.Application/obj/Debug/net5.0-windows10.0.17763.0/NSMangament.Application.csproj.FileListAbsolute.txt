@@ -1,0 +1,12 @@
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.deps.json
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\ref\NSMangament.Application.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.pdb
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.csproj.AssemblyReference.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.AssemblyInfoInputs.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.AssemblyInfo.cs
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.csproj.CoreCompileInputs.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\ref\NSMangament.Application.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.pdb

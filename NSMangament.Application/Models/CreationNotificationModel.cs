@@ -14,5 +14,6 @@ namespace NSMangament.Application.Models
         public List<ToastButton> Button { get; set; }
         public string TaskUrl { get; set; }
         public string NotificationArgument { get; set; }
+        public string AurgmentData { get; set; }
     }
 }

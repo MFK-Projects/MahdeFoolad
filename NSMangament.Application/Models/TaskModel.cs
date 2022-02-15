@@ -39,11 +39,11 @@ namespace NSMangament.Application.Models
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonProperty("new_telephone")]
-        public string TelePhone { get; set; }
-
         [JsonProperty("new_date_deadline_Task")]
         public TaskDeadLine DeadLine { get; set; }
+
+        [JsonProperty("TaskRate")]
+        public double TaskRate { get; set; }
     }
 
     
