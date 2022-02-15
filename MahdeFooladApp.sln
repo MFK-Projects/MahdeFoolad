@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSMangament.Application", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSManagament.Infrastrucure", "NSManagament.Infrastrucure\NSManagament.Infrastrucure.csproj", "{CA854664-70AE-4700-A315-FEF4DA56F8AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoint", "EndPoint", "{2E05CBB0-C90B-43E6-97E0-5E9421AF8338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahdeFooladWPF", "MahdeFooladWPF\MahdeFooladWPF.csproj", "{D821A07A-C30C-48D8-83D2-8890CBB22B93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,10 @@ Global
 		{CA854664-70AE-4700-A315-FEF4DA56F8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA854664-70AE-4700-A315-FEF4DA56F8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA854664-70AE-4700-A315-FEF4DA56F8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D821A07A-C30C-48D8-83D2-8890CBB22B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D821A07A-C30C-48D8-83D2-8890CBB22B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D821A07A-C30C-48D8-83D2-8890CBB22B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D821A07A-C30C-48D8-83D2-8890CBB22B93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 		{658600F5-9B5C-4194-BEBF-605D1E50E5E7} = {CCB3C63C-BB8E-416F-9772-100BCCB2ACC2}
 		{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1} = {B40723CA-5BFA-4F23-AA1E-106AD7AB0655}
 		{CA854664-70AE-4700-A315-FEF4DA56F8AF} = {658600F5-9B5C-4194-BEBF-605D1E50E5E7}
+		{D821A07A-C30C-48D8-83D2-8890CBB22B93} = {2E05CBB0-C90B-43E6-97E0-5E9421AF8338}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B9D7205-2196-42B1-946E-03595C3275D8}
