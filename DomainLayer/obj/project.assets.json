@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\a.moradi\\.nuget\\packages\\": {}
+    "C:\\Users\\Amir_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\DomainLayer\\DomainLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\DomainLayer\\DomainLayer.csproj",
       "projectName": "DomainLayer",
-      "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\DomainLayer\\DomainLayer.csproj",
-      "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\DomainLayer\\obj\\",
+      "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\DomainLayer\\DomainLayer.csproj",
+      "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\DomainLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

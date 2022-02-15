@@ -13,17 +13,19 @@ namespace NSManagament.Infrastrucure.Impelementions
     public class UserManagerService : IUserMananger
     {
 
+        private readonly UserModel _user;
+        public UserModel User
+        {
+            get => _user;
+        }
+
         public UserManagerService()
         {
             if (_user == null)
                 _user = new UserModel();
         }
 
-        private UserModel _user;
-        public UserModel User
-        {
-            get;
-        }
+
 
         public Task<bool> ChecckPassword(string userName, string password)
         {

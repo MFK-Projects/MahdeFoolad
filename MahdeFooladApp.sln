@@ -3,27 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A50819A6-85D6-46FA-8250-8E39A8458604}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{12896CC4-6ED8-48DE-A5CF-9C80D378E8D6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infarstrucutre", "Infarstrucutre", "{4F649043-353B-448E-8DFF-AC193B4D5F54}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{F79156E0-C24D-4F78-AB5C-13A19373DD5A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "DomainLayer\DomainLayer.csproj", "{21B46595-DBB2-480F-B26C-17C8CDD60354}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastrucureLayer", "InfrastrucureLayer\InfrastrucureLayer.csproj", "{4822C94D-EBC7-423F-AD34-0F288F45F29C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationSystemManagment", "NotificationSystemManagment", "{CCB3C63C-BB8E-416F-9772-100BCCB2ACC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B40723CA-5BFA-4F23-AA1E-106AD7AB0655}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrucure", "Infrastrucure", "{658600F5-9B5C-4194-BEBF-605D1E50E5E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSMangament.Application", "NSMangament.Application\NSMangament.Application.csproj", "{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSMangament.Application", "NSMangament.Application\NSMangament.Application.csproj", "{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSManagament.Infrastrucure", "NSManagament.Infrastrucure\NSManagament.Infrastrucure.csproj", "{CA854664-70AE-4700-A315-FEF4DA56F8AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSManagament.Infrastrucure", "NSManagament.Infrastrucure\NSManagament.Infrastrucure.csproj", "{CA854664-70AE-4700-A315-FEF4DA56F8AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,18 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F79156E0-C24D-4F78-AB5C-13A19373DD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F79156E0-C24D-4F78-AB5C-13A19373DD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F79156E0-C24D-4F78-AB5C-13A19373DD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F79156E0-C24D-4F78-AB5C-13A19373DD5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21B46595-DBB2-480F-B26C-17C8CDD60354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21B46595-DBB2-480F-B26C-17C8CDD60354}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21B46595-DBB2-480F-B26C-17C8CDD60354}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21B46595-DBB2-480F-B26C-17C8CDD60354}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4822C94D-EBC7-423F-AD34-0F288F45F29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4822C94D-EBC7-423F-AD34-0F288F45F29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4822C94D-EBC7-423F-AD34-0F288F45F29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4822C94D-EBC7-423F-AD34-0F288F45F29C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,11 +32,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{12896CC4-6ED8-48DE-A5CF-9C80D378E8D6} = {A50819A6-85D6-46FA-8250-8E39A8458604}
-		{4F649043-353B-448E-8DFF-AC193B4D5F54} = {A50819A6-85D6-46FA-8250-8E39A8458604}
-		{F79156E0-C24D-4F78-AB5C-13A19373DD5A} = {12896CC4-6ED8-48DE-A5CF-9C80D378E8D6}
-		{21B46595-DBB2-480F-B26C-17C8CDD60354} = {12896CC4-6ED8-48DE-A5CF-9C80D378E8D6}
-		{4822C94D-EBC7-423F-AD34-0F288F45F29C} = {4F649043-353B-448E-8DFF-AC193B4D5F54}
 		{B40723CA-5BFA-4F23-AA1E-106AD7AB0655} = {CCB3C63C-BB8E-416F-9772-100BCCB2ACC2}
 		{658600F5-9B5C-4194-BEBF-605D1E50E5E7} = {CCB3C63C-BB8E-416F-9772-100BCCB2ACC2}
 		{245B9A4E-53DD-4E7F-9F3F-C6DA690E9FD1} = {B40723CA-5BFA-4F23-AA1E-106AD7AB0655}

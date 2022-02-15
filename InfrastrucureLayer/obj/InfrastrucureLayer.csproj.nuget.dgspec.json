@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj": {}
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
         "projectName": "ApplicationLayer",
-        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
-        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\obj\\",
+        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
+        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,17 +64,17 @@
         }
       }
     },
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj": {
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj",
         "projectName": "InfrastrucureLayer",
-        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj",
-        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\InfrastrucureLayer\\obj\\",
+        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\InfrastrucureLayer\\InfrastrucureLayer.csproj",
+        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\InfrastrucureLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
-                "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj"
+              "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
+                "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj"
               }
             }
           }

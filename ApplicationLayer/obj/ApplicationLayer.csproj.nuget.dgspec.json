@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {}
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
         "projectName": "ApplicationLayer",
-        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
-        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\ApplicationLayer\\obj\\",
+        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\ApplicationLayer.csproj",
+        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\ApplicationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
