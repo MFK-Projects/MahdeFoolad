@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace NSMangament.Application.Models
 {
-    public class RootConvertModel<TEntity> where TEntity : class
+    public class RootModel<TEntity> where TEntity : class
+    {
+        [JsonProperty("Value")]
+        public TEntity Entities { get; set; }
+    }
+
+    public class RootListModel<TEntity> where TEntity : class
     {
         [JsonProperty("Value")]
         public List<TEntity> Entities { get; set; }
