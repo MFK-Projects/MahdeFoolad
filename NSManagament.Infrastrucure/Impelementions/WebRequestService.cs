@@ -25,16 +25,16 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         public async Task<string> DownlaodStringData(DownloadStringModel downloadModel)
         {
-            if (downloadModel == null)
-            {
-                _logger.Error($"the argument which is passed to the method is null \n method name :{ nameof(DownlaodStringData)} \t methodType :{typeof(Task<string>)}");
-                throw new Exception(ExceptionMessages.NUllArgumentException(typeof(DownloadStringModel), nameof(downloadModel)));
-            }
-            else if (string.IsNullOrEmpty(downloadModel.UserName) || string.IsNullOrEmpty(downloadModel.Password) || string.IsNullOrEmpty(downloadModel.Url) || string.IsNullOrEmpty(downloadModel.DomainName))
-            {
-                _logger.Error($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
-                throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
-            }
+            //if (downloadModel == null)
+            //{
+            //    _logger.Error($"the argument which is passed to the method is null \n method name :{ nameof(DownlaodStringData)} \t methodType :{typeof(Task<string>)}");
+            //    throw new Exception(ExceptionMessages.NUllArgumentException(typeof(DownloadStringModel), nameof(downloadModel)));
+            //}
+            //else if (string.IsNullOrEmpty(downloadModel.UserName) || string.IsNullOrEmpty(downloadModel.Password) || string.IsNullOrEmpty(downloadModel.Url) || string.IsNullOrEmpty(downloadModel.DomainName))
+            //{
+            //    _logger.Error($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
+            //    throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
+            //}
 
             _client.Credentials = new NetworkCredential(
                 downloadModel.UserName,

@@ -17,7 +17,5 @@ namespace MahdeFooald.Common
         {
             return JsonConvert.DeserializeObject<List<TEntity>>(data);
         }
-
-
     }
 }
