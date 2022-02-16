@@ -1,0 +1,12 @@
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.deps.json
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.pdb
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfoInputs.cache
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfo.cs
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.CoreCompileInputs.cache
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb

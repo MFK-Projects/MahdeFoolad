@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "NSManagament.Infrastrucure/1.0.0": {
         "dependencies": {
+          "MahdeFooald.Common": "1.0.0",
           "NSMangament.Application": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "System.DirectoryServices.AccountManagement": "5.0.0",
@@ -256,6 +257,11 @@
           }
         }
       },
+      "MahdeFooald.Common/1.0.0": {
+        "runtime": {
+          "MahdeFooald.Common.dll": {}
+        }
+      },
       "NSMangament.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Toolkit.Uwp.Notifications": "7.0.1",
@@ -403,6 +409,11 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "MahdeFooald.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "NSMangament.Application/1.0.0": {
       "type": "project",

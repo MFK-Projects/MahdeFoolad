@@ -12,7 +12,5 @@ namespace NSMangament.Application.Services
         UserModel User { get; }
         Task<bool> CheckPassword(string pasword);
         Task<bool> ChecckPassword(string userName, string password);
-
-
     }
 }

@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pJb/P5Ihd+EA2YMlb6N5gzPoZYCUmqkVct5pmoSA4vECQ0OP4O7Ljbfe8d/hkqd/c0pjjd2GCj/NKNzTKdrl1w==",
+  "dgSpecHash": "Ea0qJwwtcyFxExFWIBbEH/ET6/i7uoD52IQa86bS7Q4KLpgEG70dHPqmtgFnwFWEzqDpb1hnWgMdagHpKLcRrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

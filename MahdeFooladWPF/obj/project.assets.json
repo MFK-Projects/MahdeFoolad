@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Amir_\\.nuget\\packages\\": {}
+    "C:\\Users\\a.moradi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
       "projectName": "MahdeFooladWPF",
-      "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
-      "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
+      "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,12 +55,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.13, 5.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

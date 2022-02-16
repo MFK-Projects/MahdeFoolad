@@ -1,4 +1,7 @@
-﻿using NSMangament.Application.Services;
+﻿using MahdeFooald.Common;
+using NSMangament.Application.Models;
+using NSMangament.Application.Services;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,50 +15,47 @@ namespace NSManagament.Infrastrucure.Impelementions
     {
         private readonly WebClient _client;
         private bool _disposed;
-        private readonly IUserMananger _userManager;
-
-        public WebRequestService(IUserMananger userManager)
+        private static ILogger _logger;
+        public WebRequestService(ILogger logger)
         {
-            _userManager = userManager;
+            _logger = logger;
             _client = new WebClient();
+            _logger.Information($"object type of  {typeof(WebRequestService)} is created  and Private Feild {typeof(WebClient)} is initialized");
         }
-        public async Task<string> DownlaodStringData(string url)
+
+        public async Task<string> DownlaodStringData(DownloadStringModel downloadModel)
         {
-            if (string.IsNullOrEmpty(url))
-                return await Task.FromResult(string.Empty);
+            if (downloadModel == null)
+            {
+                _logger.Error($"the argument which is passed to the method is null \n method name :{ nameof(DownlaodStringData)} \t methodType :{typeof(Task<string>)}");
+                throw new Exception(ExceptionMessages.NUllArgumentException(typeof(DownloadStringModel), nameof(downloadModel)));
+            }
+            else if (string.IsNullOrEmpty(downloadModel.UserName) || string.IsNullOrEmpty(downloadModel.Password) || string.IsNullOrEmpty(downloadModel.Url) || string.IsNullOrEmpty(downloadModel.DomainName))
+            {
+                _logger.Error($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
+                throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
+            }
 
             _client.Credentials = new NetworkCredential(
-                _userManager.User.CredentialName,
-                _userManager.User.Password,
-                "KIAN"
+                downloadModel.UserName,
+                downloadModel.Password,
+                downloadModel.DomainName
                 );
+
             _client.Headers.Add("OData-Version", "4.0");
 
-            return await Task.FromResult(_client?.DownloadString(new Uri(url)));
+            return await Task.FromResult(_client?.DownloadString(new Uri(downloadModel.Url)));
         }
 
-        public async Task<string> DownlaodStringData(string url, string password)
+        public string UrlBuilder(WebRequestModel model)
         {
-            if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(password))
-                return await Task.FromResult(string.Empty);
-
-            _client.Credentials = new NetworkCredential(
-                _userManager.User.CredentialName,
-                password,
-                "KIAN"
-                );
-            _client.Headers.Add("OData-Version", "4.0");
-
-            return await Task.FromResult(_client?.DownloadString(new Uri(url)));
+            
         }
-
-
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
         protected virtual void Dispose(bool dispose)
         {
 

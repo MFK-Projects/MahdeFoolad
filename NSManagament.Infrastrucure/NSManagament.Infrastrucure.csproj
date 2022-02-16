@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="System.DirectoryServices.AccountManagement" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MahdeFooald.Common\MahdeFooald.Common.csproj" />
     <ProjectReference Include="..\NSMangament.Application\NSMangament.Application.csproj" />
   </ItemGroup>
 

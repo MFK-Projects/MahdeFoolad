@@ -15,7 +15,12 @@
       "ProjectGuid": "245b9a4e-53dd-4e7f-9f3f-c6da690e9fd1",
       "DisplayName": "NSMangament.Application",
       "ColorIndex": 2
+    },
+    "ca854664-70ae-4700-a315-fef4da56f8af": {
+      "ProjectGuid": "ca854664-70ae-4700-a315-fef4da56f8af",
+      "DisplayName": "NSManagament.Infrastrucure",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

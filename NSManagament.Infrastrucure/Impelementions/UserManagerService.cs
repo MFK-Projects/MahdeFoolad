@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.DirectoryServices.AccountManagement;
 using Newtonsoft.Json;
+using MahdeFooald.Common;
+using Serilog;
 
 namespace NSManagament.Infrastrucure.Impelementions
 {
@@ -14,6 +16,9 @@ namespace NSManagament.Infrastrucure.Impelementions
     {
 
         private readonly UserModel _user;
+
+        private readonly ILogger _logger;
+        private readonly IWebRequest _webRequest;
         public UserModel User
         {
             get => _user;
@@ -21,16 +26,44 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         public UserManagerService()
         {
-            if (_user == null)
-                _user = new UserModel();
+
         }
-
-
+        public UserManagerService(ILogger logger, IWebRequest webRequest)
+        {
+            if (_user == null)
+            {
+                _user = new UserModel
+                {
+                    UserName = GetUserName(),
+                    Password = String.Empty,
+                    FullName = String.Empty,
+                    UserId = String.Empty
+                };
+            }
+            _logger = logger;
+            _webRequest = webRequest;
+        }
+        public string GetUserName()
+        {
+            try { return ConvertCurentUserName(UserPrincipal.Current.UserPrincipalName); }
+            catch { throw new Exception($"Can not Get the Curent UserName From the Active Directory in {nameof(GetUserName)} Method."); }
+        }
 
         public Task<bool> ChecckPassword(string userName, string password)
         {
             if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
-                return Task.FromResult(false);
+                throw new Exception(ExceptionMessages.NUllArgumentException(
+                    new Type[]
+                    {
+                        typeof(string),
+                        typeof(string)
+                    },
+                    new object[]
+                    {
+                        nameof(userName),
+                        nameof(password)
+                    }
+                ));
 
 
             using var contextPrincipal = new PrincipalContext(ContextType.Machine);
@@ -43,7 +76,7 @@ namespace NSManagament.Infrastrucure.Impelementions
         public Task<bool> CheckPassword(string password)
         {
             if (string.IsNullOrEmpty(password))
-                return Task.FromResult(false);
+                throw new ArgumentNullException(ExceptionMessages.NUllArgumentException(typeof(string), password));
 
             using var contextPrincipal = new PrincipalContext(ContextType.Machine);
 
@@ -52,10 +85,11 @@ namespace NSManagament.Infrastrucure.Impelementions
             else
                 return Task.FromResult(false);
         }
-
-
         private void SetUserInfo(UserModel user)
         {
+            if (user == null)
+                throw new ArgumentNullException(ExceptionMessages.NUllArgumentException(typeof(UserModel), user));
+
             var _jsondata = JsonConvert.SerializeObject(user);
             System.IO.File.WriteAllText(CreateUserFile(), _jsondata);
         }
@@ -71,7 +105,7 @@ namespace NSManagament.Infrastrucure.Impelementions
             else
                 return path;
         }
-        private string CredentialUserName(string username)
+        private string ConvertCurentUserName(string username)
         {
             if (username.Contains(@"KIAN\"))
                 return username;

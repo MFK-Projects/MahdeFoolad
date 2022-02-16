@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NSMangament.Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,6 @@ namespace NSMangament.Application.Services
 {
     public interface IWebRequest : IDisposable
     {
-        Task<string> DownlaodStringData(string url);
-        Task<string> DownlaodStringData(string url, string password);
+        Task<string> DownlaodStringData(DownloadStringModel downlaodModel);
     }
 }
