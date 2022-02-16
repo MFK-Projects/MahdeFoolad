@@ -8,7 +8,6 @@ namespace NSMangament.Application.Models
 {
     public class UrlBuilderModel
     {
-       public string[] SelectedItem { get; set; }
-       public 
+       public string[] SelectedItem { get; set; } 
     }
 }
