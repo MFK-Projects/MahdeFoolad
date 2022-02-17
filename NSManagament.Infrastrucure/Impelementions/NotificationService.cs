@@ -14,7 +14,8 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         private bool _disposed = false;
         private readonly ILogger _logger;
-
+        private static int _notificationsendCount;
+        private static readonly object _locker = new object();
         public NotificationService(ILogger logger)
         {
             _logger = logger;
@@ -26,18 +27,36 @@ namespace NSManagament.Infrastrucure.Impelementions
         {
             if (creationModel == null)
             {
-                throw new ArgumentNullException($"{nameof(creationModel)} are send null to the method {nameof(SendNotification)}");
+                _logger.Error($"the argument passed to the method typeof {typeof(void)} name : {nameof(SendNotification)} is null argument name {nameof(creationModel)} argumenttype :{typeof(CreationNotificationModel)}");
+                return Task.CompletedTask;
             }
 
-            ToastCreator(creationModel);
+            lock(_locker)
+            {
+                ToastCreator(creationModel);
+                _notificationsendCount++;
+            }
+
             return Task.CompletedTask;
         }
 
         public Task SendNotification(List<CreationNotificationModel> creationListModel)
         {
+            if (creationListModel == null)
+            {
+                _logger.Error($"the argument passed to the method typeof {typeof(void)} name : {nameof(SendNotification)} is null argument name {nameof(creationListModel)} argumenttype :{typeof(CreationNotificationModel)}");
+
+                return Task.CompletedTask;
+            }
+
             foreach (var toast in creationListModel)
             {
-                ToastCreator(toast);
+                lock (_locker)
+                {
+                    ToastCreator(toast);
+                    _notificationsendCount++;
+                }
+
                 Thread.Sleep(10000);
             }
 
@@ -47,10 +66,6 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         private void ToastCreator(CreationNotificationModel model)
         {
-            if (model == null)
-                throw new ArgumentNullException($"{typeof(NotificationCreationModel)} is null while passing it to Toast Creation Filter");
-
-
             var toast = new ToastContentBuilder();
 
 
@@ -75,8 +90,6 @@ namespace NSManagament.Infrastrucure.Impelementions
             if (!string.IsNullOrEmpty(model.TaskUrl))
                 toast.SetProtocolActivation(new System.Uri(model.TaskUrl));
             toast.Show();
-
-            toast = null;
         }
 
 

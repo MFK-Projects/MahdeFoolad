@@ -22,7 +22,6 @@ namespace NSManagament.Infrastrucure.Impelementions
             _client = new WebClient();
             _logger.Information($"object type of  {typeof(WebRequestService)} is created  and Private Feild {typeof(WebClient)} is initialized");
         }
-
         public async Task<string> DownlaodStringData(DownloadStringModel downloadModel)
         {
             if (downloadModel == null)
