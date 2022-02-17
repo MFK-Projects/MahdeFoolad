@@ -24,10 +24,6 @@ namespace NSManagament.Infrastrucure.Impelementions
             get => _user;
         }
 
-        public UserManagerService()
-        {
-
-        }
         public UserManagerService(ILogger logger, IWebRequest webRequest)
         {
             if (_user == null)

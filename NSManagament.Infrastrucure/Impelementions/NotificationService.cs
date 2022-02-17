@@ -20,9 +20,6 @@ namespace NSManagament.Infrastrucure.Impelementions
         {
             _logger = logger;
         }
-
-
-
         public Task SendNotification(CreationNotificationModel creationModel)
         {
             if (creationModel == null)
