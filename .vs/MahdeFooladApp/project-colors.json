@@ -20,7 +20,17 @@
       "ProjectGuid": "ca854664-70ae-4700-a315-fef4da56f8af",
       "DisplayName": "NSManagament.Infrastrucure",
       "ColorIndex": 3
+    },
+    "90b4b77c-968f-428d-931d-44694bb867da": {
+      "ProjectGuid": "90b4b77c-968f-428d-931d-44694bb867da",
+      "DisplayName": "NotificationSystem.Test",
+      "ColorIndex": 4
+    },
+    "28b6dc50-7558-44d6-a497-95ae1f15c493": {
+      "ProjectGuid": "28b6dc50-7558-44d6-a497-95ae1f15c493",
+      "DisplayName": "MahdeFooald.Common",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

@@ -54,3 +54,9 @@ D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\ref\MahdeFooladWPF.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.pdb
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.genruntimeconfig.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\bin\Debug\net5.0-windows\MaterialDesignColors.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\bin\Debug\net5.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\App.baml
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.csproj.CopyComplete
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\UserControls\MultiMenu.g.cs
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\UserControls\MultiMenu.baml

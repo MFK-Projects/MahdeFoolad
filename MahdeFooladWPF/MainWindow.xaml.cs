@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -20,9 +21,33 @@ namespace MahdeFooladWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static Duration _duration = new Duration(TimeSpan.FromSeconds(0.6));
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation animation;
+            QuarticEase easing = new();
+            easing.EasingMode = EasingMode.EaseInOut;
+
+
+            if (Stpanel.Width == 260)
+            {
+                animation = new(45, _duration);
+                toggleBtnContent.Kind = MaterialDesignThemes.Wpf.PackIconKind.ArrowRight;
+            }
+            else
+            {
+                animation = new(260, _duration);
+                toggleBtnContent.Kind = MaterialDesignThemes.Wpf.PackIconKind.ArrowLeft;
+            }
+               
+
+            animation.EasingFunction = easing;
+            Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
         }
     }
 }
