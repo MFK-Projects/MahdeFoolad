@@ -56,7 +56,7 @@ namespace MahdeFooladWPF.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MahdeFooladWPF;component/usercontrols/multimenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MahdeFooladWPF;V1.0.0.0;component/usercontrols/multimenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\MultiMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

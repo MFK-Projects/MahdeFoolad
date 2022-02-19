@@ -30,7 +30,17 @@
       "ProjectGuid": "28b6dc50-7558-44d6-a497-95ae1f15c493",
       "DisplayName": "MahdeFooald.Common",
       "ColorIndex": 5
+    },
+    "d821a07a-c30c-48d8-83d2-8890cbb22b93": {
+      "ProjectGuid": "d821a07a-c30c-48d8-83d2-8890cbb22b93",
+      "DisplayName": "MahdeFooladWPF",
+      "ColorIndex": 6
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
