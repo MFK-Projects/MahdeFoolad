@@ -257,3 +257,7 @@ C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NotificationSystem.Test\bi
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NotificationSystem.Test\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.pdb
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NotificationSystem.Test\obj\Debug\net5.0-windows10.0.17763.0\NotificationSystem.Test.csproj.CopyComplete
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NotificationSystem.Test\obj\Debug\net5.0-windows10.0.17763.0\NotificationSystem.Test.genruntimeconfig.cache
+<<<<<<< HEAD
+D:\Projects\FullApplication\MahdeFoolad\NotificationSystem.Test\bin\Debug\net5.0-windows10.0.17763.0\Serilog.dll
+=======
+>>>>>>> 09f628a4cff7e273f764ebbdb4398965d12ae4a3

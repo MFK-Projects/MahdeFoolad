@@ -4,13 +4,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MahdeFooladWPF"
+        xmlns:local="clr-namespace:MahdeFooladWPF.Views"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        
-        Title="MainWindow" Height="250" Width="600">
+        Title="MainWindow" Height="260" Width="600">
 
     <Grid>
         <Grid.Background>
@@ -22,8 +21,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="21*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -32,23 +32,52 @@
                 <ColumnDefinition/>
 
             </Grid.ColumnDefinitions>
-
-            <Button Background="Transparent"
+            <StackPanel
+                MouseDown="TopStackPanel_MouseDowned"
+                VerticalAlignment="Center">
+                <Button 
+                Background="Transparent"
                     BorderBrush="Transparent" HorizontalAlignment="Left" Margin="5">
-                <Button.Content>
-                    <materialDesign:PackIcon Kind="Close" Foreground="#BA544F" FontWeight="Bold"/>
-                </Button.Content>
-            </Button>
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="Close" Foreground="#BA544F" FontWeight="Bold"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
 
-            <TextBlock Text="کاربر امیر حسین مرادی" Grid.Column="1" 
-                       HorizontalAlignment="Right"
-                       Margin="10"
-                       VerticalAlignment="Center"
-                       FontSize="18"
-                       Foreground="White"
-                       FontWeight="SemiBold"
-                       FlowDirection="RightToLeft"
-                       />
+            <StackPanel
+                HorizontalAlignment="Right"
+                Orientation="Horizontal" Grid.Column="1" Margin="10">
+
+                <Button Grid.Column="2" HorizontalAlignment="Right" 
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Background="AliceBlue" 
+                        BorderBrush="Transparent">
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="Menu" 
+                                                 Foreground="Black"/>
+                    </Button.Content>
+
+
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Duration=" 0:0:0.4"
+                                        To="210"
+                                        Storyboard.TargetName="navbar"
+                                        Storyboard.TargetProperty="Width">
+
+                                        <DoubleAnimation.EasingFunction>
+                                            <PowerEase  EasingMode="EaseIn"/>
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackPanel>
         </Grid>
 
 
@@ -67,6 +96,7 @@
 
                     <Separator/>
                     <TextBlock 
+                    MaxHeight="80"
                     TextWrapping="Wrap"
                     Padding="10"
                     FlowDirection="RightToLeft"
@@ -103,5 +133,202 @@
                 </StackPanel>
             </Border>
         </Grid>
+
+        <ProgressBar
+            Margin="10 0 10 0"
+            Grid.Row="2"
+            Background="White"
+             Value="50"
+             materialDesign:TransitionAssist.DisableTransitions="True" />
+
+
+
+
+
+        <Border HorizontalAlignment="Right" 
+                Name="navbar"
+                Background="#FDEBF7"
+                CornerRadius="10 0 0 10"
+                Grid.RowSpan="3" Width="210">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="4"
+                                  Opacity="0.8"
+                                  Direction="1"
+                                  BlurRadius="10"
+                                  Color="Gray" />
+            </Border.Effect>
+            <StackPanel>
+                <Button Background="Transparent"
+                        Name="MenuCloseBtn"
+                        BorderBrush="Transparent"
+                        Margin="5" HorizontalAlignment="Left">
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border Cursor="Hand"
+                                    Background="Transparent"
+                                    Padding="5"
+                                    VerticalAlignment="Center">
+                                <Border.Style>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation 
+                                                                     To="DarkOrange"
+                                                                     Duration="0:0:0.3"
+                                                                      Storyboard.TargetProperty="Background.Color"  />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation 
+                                                                     To="Transparent"
+                                                                     Duration="0:0:0.3"
+                                                                      Storyboard.TargetProperty="Background.Color"  />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+
+                                <materialDesign:PackIcon Kind="close"
+                                                 Foreground="DarkRed"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="navbar"
+                                        Storyboard.TargetProperty="Width"
+                                        To="0"
+                                        Duration="0:0:0.4">
+                                        <DoubleAnimation.EasingFunction>
+                                            <SineEase EasingMode="EaseIn"/>
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
+                <TextBlock Text="کاربر امیر حسین مرادی" 
+                       HorizontalAlignment="Right"
+                       Margin="0 4 5 10"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"
+                       FlowDirection="RightToLeft"/>
+
+                <Button
+                    Name="OpTasksWidnowBtn"
+                    Click="OpTasksWidnowBtn_Click"
+                    Foreground="Black"
+                    Margin="5 6"
+                    HorizontalContentAlignment="Right">
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border 
+                                Background="#EDCDBB"
+                                CornerRadius="5"
+                                Style="{StaticResource navbarButton }">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="لیست وظایف" />
+                                    <materialDesign:PackIcon Kind="ClipboardList" HorizontalAlignment="Right"
+                                                             Foreground="#548CFF"
+                                                             Margin="3"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+                <Button
+                    Foreground="Black"
+                    Margin="5 6"
+                    HorizontalContentAlignment="Right">
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border 
+                                Background="#EDCDBB"
+                                CornerRadius="5"
+                                Style="{StaticResource navbarButton }">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="reminder" />
+                                    <materialDesign:PackIcon Kind="ClockAlert" HorizontalAlignment="Right"
+                                                             Foreground="#35589A"
+                                                             Margin="3"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button
+                    Foreground="Black"
+                    Margin="5 6"
+                    HorizontalContentAlignment="Right">
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border 
+                                Background="#EDCDBB"
+                                CornerRadius="5"
+                                Style="{StaticResource navbarButton }">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="بروز رسانی اطلاعات" />
+                                    <materialDesign:PackIcon Kind="Refresh"
+                                                             Foreground="#F14A16"
+                                                             HorizontalAlignment="Right" Margin="3"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <Button
+                    Foreground="Black"
+                    Margin="5 6"
+                    HorizontalContentAlignment="Right">
+
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border 
+                                Background="#EDCDBB"
+                                CornerRadius="5"
+                                Style="{StaticResource navbarButton }">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="تنظیمات کارخانه" />
+                                    <materialDesign:PackIcon Kind="Restart" 
+                                                             Foreground="#6998AB"
+                                                             HorizontalAlignment="Right" Margin="3"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Window>

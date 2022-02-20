@@ -9,7 +9,7 @@ namespace MahdeFooladWPF.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
         // Fire the Property Change Event when the data has been changed.

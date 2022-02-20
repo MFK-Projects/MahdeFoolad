@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahdeFooladWPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace MahdeFooladWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static Duration _duration = new Duration(TimeSpan.FromSeconds(0.6));
+        private static Duration _duration = new (TimeSpan.FromSeconds(0.6));
         public MainWindow()
         {
             InitializeComponent();
@@ -44,10 +45,22 @@ namespace MahdeFooladWPF
                 animation = new(260, _duration);
                 toggleBtnContent.Kind = MaterialDesignThemes.Wpf.PackIconKind.ArrowLeft;
             }
-               
+
 
             animation.EasingFunction = easing;
             Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
+        }
+
+        private void TopStackPanel_MouseDowned(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void OpTasksWidnowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var taskswindow = new TasksListView();
+            taskswindow.Owner = this;
+            taskswindow.ShowDialog();
         }
     }
 }

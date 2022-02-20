@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\
 MahdeFooladWPF
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\App.xaml
+D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\App.xaml
 51822052580
 
 11-171672950
-1951101847143
+195-695220711
 MainWindow.xaml;UserControls\MultiMenu.xaml;Views\LoginView.xaml;Views\TasksListView.xaml;Views\TaskView.xaml;
 
 True
