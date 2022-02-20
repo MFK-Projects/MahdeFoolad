@@ -7,7 +7,7 @@
         WindowStyle="None"
         xmlns:local="clr-namespace:MahdeFooladWPF.Views" 
         mc:Ignorable="d"
-        Title="TaskView" Height="180" Width="380">
+        Title="TaskView" Height="170" Width="380">
     <StackPanel>
         <Grid>
             <Button  
@@ -56,9 +56,15 @@
                                  Cursor="Hand"
                                  Background="DarkOrange"
                                  Padding="5">
-                                <materialDesign:PackIcon Kind="Openid" 
+                                <materialDesign:PackIcon Kind="ArrowDropDownCircle" 
                                                      VerticalAlignment="Center"
-                                                     Foreground="DarkBlue"/>
+                                                     Foreground="DarkBlue">
+                                    <materialDesign:PackIcon.RenderTransform>
+                                        <RotateTransform 
+                                            Angle="90" CenterX="8"
+                                            CenterY="8"/>
+                                    </materialDesign:PackIcon.RenderTransform>
+                                </materialDesign:PackIcon>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -79,8 +85,8 @@
 
             </WrapPanel>
 
-            <TextBlock Text="1400/11/13" VerticalAlignment="Bottom" Margin="50 0 0 0"/>
-            <TextBlock Text="3 ساعت باقی مانده" VerticalAlignment="Bottom" Margin="10 0 0 0"/>
+            <TextBlock Text="1400/11/13" VerticalAlignment="Center" Margin="40 0 0 0"/>
+            <TextBlock Text="3 ساعت باقی مانده" VerticalAlignment="Center" Margin="5 0 0 0"/>
         </StackPanel>
     </StackPanel>
 </Window>

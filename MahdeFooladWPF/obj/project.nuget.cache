@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rxXSrnoJO+4pruCd52krrvlVfidVXSynU8eVlp3sIUku2gKibcJ859BNU2n/qWFD69CI+bhlIQUw846wHVNOpQ==",
+  "dgSpecHash": "g7i/odHxveUiF4ci1bcFtXzFIj44PMTwAdgjDkDAzVETQ2DdAkU3xbdJFHPlyKBxuHvCPMy3POnCcr8MP5o8wg==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+  "projectFilePath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\a.moradi\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
-    "C:\\Users\\a.moradi\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512"
+    "C:\\Users\\Amir_\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\Amir_\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
+    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }
