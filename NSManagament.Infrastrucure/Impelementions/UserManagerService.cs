@@ -15,37 +15,57 @@ namespace NSManagament.Infrastrucure.Impelementions
     public class UserManagerService : IUserMananger
     {
 
-        private readonly UserModel _user;
+        private UserModel _user;
 
-        private readonly ILogger _logger;
         private readonly IWebRequest _webRequest;
         public UserModel User
         {
             get => _user;
         }
 
-        public UserManagerService(ILogger logger, IWebRequest webRequest)
+        public UserManagerService(IWebRequest webRequest)
         {
-            if (_user == null)
+
+            var check = CheckSettingFile();
+
+            if (check.Item1 && check.Item2 != null)
+                _user = check.Item2;
+            else
             {
-                _user = new UserModel
-                {
-                    UserName = GetUserName(),
-                    Password = String.Empty,
-                    FullName = String.Empty,
-                    UserId = String.Empty
-                };
+                if (check.Item2 != null)
+                    _user = check.Item2;
+                else
+                    _user = new UserModel
+                    {
+                        FullName = String.Empty,
+                        Password = String.Empty,
+                        UserId = String.Empty,
+                        UserName = GetUserName()
+                    };
             }
-            _logger = logger;
+
             _webRequest = webRequest;
         }
-        public string GetUserName()
+        
+        
+        public async Task<bool> RetriveFromCRM()
         {
-            try { return ConvertCurentUserName(UserPrincipal.Current.UserPrincipalName); }
-            catch { throw new Exception($"Can not Get the Curent UserName From the Active Directory in {nameof(GetUserName)} Method."); }
-        }
+            var _jsondata = await _webRequest.DownlaodStringData(new DownloadStringModel
+            {
+                Password = _user.Password,
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.SingleUser, _user.UserName, null, null),
+                UserName = _user.CredentialName,
+                DomainName = RequestUrl.DomainName,
+            });
 
-        public Task<bool> ChecckPassword(string userName, string password)
+            var userdata = JsonConvert.DeserializeObject<UserModel>(_jsondata);
+
+            if (userdata == null) return await Task.FromResult(false);
+
+            _user = userdata;
+            return await Task.FromResult(true);
+        }
+        public Task<bool> CheckPassword(string userName, string password)
         {
             if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
                 throw new Exception(ExceptionMessages.NUllArgumentException(
@@ -81,14 +101,25 @@ namespace NSManagament.Infrastrucure.Impelementions
             else
                 return Task.FromResult(false);
         }
-        private void SetUserInfo(UserModel user)
+        public void SetUserInfo(UserModel user)
         {
-            if (user == null)
-                throw new ArgumentNullException(ExceptionMessages.NUllArgumentException(typeof(UserModel), user));
+            try
+            {
+                if (user == null)
+                    throw new ArgumentNullException(ExceptionMessages.NUllArgumentException(typeof(UserModel), user));
 
-            var _jsondata = JsonConvert.SerializeObject(user);
-            System.IO.File.WriteAllText(CreateUserFile(), _jsondata);
+                var _jsondata = JsonConvert.SerializeObject(user);
+                System.IO.File.WriteAllText(CreateUserFile(), _jsondata);
+                _user = user;
+            }
+            catch
+            {
+                throw new Exception("SetUserInfo Method thrown an exception Writing user data to file is failed!");
+            }
         }
+
+
+
         private string CreateUserFile()
         {
             string path = Environment.CurrentDirectory + @"\UserInfo.json";
@@ -109,6 +140,26 @@ namespace NSManagament.Infrastrucure.Impelementions
                 return @"KIAN\" + username.Split("@")[0];
 
             return string.Empty;
+        }
+        private string GetUserName()
+        {
+            try { return ConvertCurentUserName(UserPrincipal.Current.UserPrincipalName); }
+            catch { throw new Exception($"Can not Get the Curent UserName From the Active Directory in {nameof(GetUserName)} Method."); }
+        }
+        private (bool, UserModel) CheckSettingFile()
+        {
+            var _jsondata = System.IO.File.ReadAllText(CreateUserFile());
+
+            if (_jsondata.Length == 0)
+                return (false, null);
+
+            UserModel _usermodel = JsonConvert.DeserializeObject<UserModel>(_jsondata);
+
+            if (string.IsNullOrEmpty(_usermodel.Password))
+                return (false, _usermodel);
+
+            return (true, _usermodel);
+
         }
     }
 }

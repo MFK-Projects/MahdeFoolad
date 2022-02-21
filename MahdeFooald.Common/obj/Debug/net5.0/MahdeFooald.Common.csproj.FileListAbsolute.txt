@@ -21,3 +21,4 @@ D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\Mahd
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache

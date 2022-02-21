@@ -10,7 +10,10 @@ namespace NSMangament.Application.Services
     public interface IUserMananger
     {
         UserModel User { get; }
+
+        Task<bool> RetriveFromCRM();
+        void SetUserInfo(UserModel user);
         Task<bool> CheckPassword(string pasword);
-        Task<bool> ChecckPassword(string userName, string password);
+        Task<bool> CheckPassword(string userName, string password);
     }
 }

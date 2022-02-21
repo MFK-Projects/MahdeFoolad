@@ -32,3 +32,6 @@ D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\ref\MahdeFooladWPF.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.pdb
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.genruntimeconfig.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\ref\MahdeFooladWPF.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows\MahdeFooladWPF.pdb
