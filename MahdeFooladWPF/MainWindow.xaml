@@ -5,19 +5,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MahdeFooladWPF.Views" 
+        xmlns:uc="clr-namespace:MahdeFooladWPF.UserControls"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
+        WindowStyle="None"
         Title="MainWindow" Height="260" Width="600">
-    <Grid
-        >
+    <Grid>
         <Grid.Background>
-            <LinearGradientBrush
-                    StartPoint="0.5,0" EndPoint="0.5,1"
-                     Opacity="0.9">
-                <GradientStop Color="#0A5A5C" Offset="0.6" />
-                <GradientStop Color="#109193" Offset="0.9"/>
+            <LinearGradientBrush >
+                <GradientStop  Color="#dee2e6" Offset="0"/>
+                <GradientStop  Color="#e9ecef" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -50,11 +49,11 @@
 
                 <Button Grid.Column="2" HorizontalAlignment="Right" 
                         materialDesign:ButtonAssist.CornerRadius="5"
-                        Background="AliceBlue" 
+                        Background="#061830" 
                         BorderBrush="Transparent">
                     <Button.Content>
                         <materialDesign:PackIcon Kind="Menu" 
-                                                 Foreground="Black"/>
+                                                 Foreground="orange"/>
                     </Button.Content>
 
 
@@ -63,13 +62,13 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-                                        Duration=" 0:0:0.4"
+                                        Duration=" 0:0:1"
                                         To="210"
                                         Storyboard.TargetName="navbar"
                                         Storyboard.TargetProperty="Width">
 
                                         <DoubleAnimation.EasingFunction>
-                                            <PowerEase  EasingMode="EaseIn"/>
+                                            <CubicEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
                                 </Storyboard>
@@ -82,56 +81,7 @@
 
 
         <Grid Grid.Row="1">
-            <Border
-                CornerRadius="10"
-                Background="#DAD2D8"
-                Margin="10">
-                <StackPanel
->
-                    <TextBlock Text="تست این نرم افزار نمایش" Padding="10"
-                           FontWeight="SemiBold"
-                           Foreground="black"
-                           HorizontalAlignment="Right"
-                           TextWrapping="Wrap"/>
-
-                    <Separator/>
-                    <TextBlock 
-                    MaxHeight="80"
-                    TextWrapping="Wrap"
-                    Padding="10"
-                    FlowDirection="RightToLeft"
-                    Text="this operation should have the number for the this prepus of our posigion for the doing stuf or create new brand car for the tesla"/>
-
-
-
-                    <Border
-                        Background="DarkOrange"
-                        BorderBrush="AliceBlue"
-                        BorderThickness="3"
-                        CornerRadius="15"
-                        HorizontalAlignment="Left">
-                        <StackPanel
-                            Orientation="Horizontal"
-                            Width="45"
-                            x:Name="Stpanel">
-                            <Button
-                                Width="45"
-                                HorizontalAlignment="Left"
-                                Background="Transparent"
-                                Name="ToggleBtn"
-                                Click="ToggleBtn_Click"
-                                BorderBrush="Transparent">
-                                <Button.Content>
-                                    <materialDesign:PackIcon Kind="ArrowRight" Name="toggleBtnContent" />
-                                </Button.Content>
-                            </Button>
-                            <Button Margin="5"/>
-                            <Button Margin="5"/>
-                            <Button Margin="5"/>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
-            </Border>
+         
         </Grid>
 
         <ProgressBar
@@ -149,7 +99,7 @@
                 Name="navbar"
                 Background="#FDEBF7"
                 CornerRadius="10 0 0 10"
-                Grid.RowSpan="3" Width="210">
+                Grid.RowSpan="3" Width="0">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="4"
                                   Opacity="0.8"

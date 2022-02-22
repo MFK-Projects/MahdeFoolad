@@ -45,8 +45,7 @@ namespace MahdeFooladWPF
                 login.ShowDialog();
 
                 mainWindow = new MainWindow();
-                mainWindow.Show();
-                
+                mainWindow.ShowDialog(); 
             }
             else
             {

@@ -25,7 +25,6 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\Mahde
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.pdb
-Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.GeneratedMSBuildEditorConfig.editorconfig
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfoInputs.cache
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfo.cs

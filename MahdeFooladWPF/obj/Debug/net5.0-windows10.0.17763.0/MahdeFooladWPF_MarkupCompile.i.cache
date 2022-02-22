@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\App.xaml
-51688475229
+51254993373
 
-1470277890
+14346364513
 208-1545334201
-MainWindow.xaml;UserControls\MultiMenu.xaml;Views\LoginWindow.xaml;Views\TasksListView.xaml;Views\TaskView.xaml;
+MainWindow.xaml;UserControls\TaskUserControl.xaml;Views\LoginWindow.xaml;Views\TasksListView.xaml;Views\TaskView.xaml;
 
 True
 

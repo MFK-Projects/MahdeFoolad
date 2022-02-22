@@ -4,14 +4,11 @@ namespace NSMangament.Application.Models
 {
     public class UserModel
     {
-        [JsonIgnore]
         public string CredentialName { get => UserName?.Split(@"\")[1] ?? string.Empty; }
 
-
-        [JsonIgnore]
         public string UserName { get; set; }
 
-        [JsonIgnore]
+
         public string Password { get; set; }
 
         [JsonProperty("fullname")]
