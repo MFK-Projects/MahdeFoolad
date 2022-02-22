@@ -26,6 +26,27 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection/5.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -107,6 +128,18 @@
         },
         "runtime": {
           "lib/netstandard2.1/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.10.0"
+        },
+        "compile": {
+          "lib/net5.0/Serilog.Sinks.File.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.Sinks.File.dll": {}
         }
       },
       "System.Configuration.ConfigurationManager/5.0.0": {
@@ -440,6 +473,50 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
+    "Microsoft.Extensions.DependencyInjection/5.0.1": {
+      "sha512": "//mDNrYeiJ0eh/awFhDFJQzkRVra/njU5Y4fyK7X29g5HScrzbUkKOKlyTtygthcGFt4zNC8G5CFCjb/oizomA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net5.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+      "sha512": "ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
@@ -623,6 +700,33 @@
         "lib/netstandard2.1/Serilog.xml",
         "serilog.2.10.0.nupkg.sha512",
         "serilog.nuspec"
+      ]
+    },
+    "Serilog.Sinks.File/5.0.0": {
+      "sha512": "uwV5hdhWPwUH1szhO8PJpFiahqXmzPzJT/sOijH/kFgUx+cyoDTMM8MHD0adw9+Iem6itoibbUXHYslzXsLEAg==",
+      "type": "package",
+      "path": "serilog.sinks.file/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/icon.png",
+        "lib/net45/Serilog.Sinks.File.dll",
+        "lib/net45/Serilog.Sinks.File.pdb",
+        "lib/net45/Serilog.Sinks.File.xml",
+        "lib/net5.0/Serilog.Sinks.File.dll",
+        "lib/net5.0/Serilog.Sinks.File.pdb",
+        "lib/net5.0/Serilog.Sinks.File.xml",
+        "lib/netstandard1.3/Serilog.Sinks.File.dll",
+        "lib/netstandard1.3/Serilog.Sinks.File.pdb",
+        "lib/netstandard1.3/Serilog.Sinks.File.xml",
+        "lib/netstandard2.0/Serilog.Sinks.File.dll",
+        "lib/netstandard2.0/Serilog.Sinks.File.pdb",
+        "lib/netstandard2.0/Serilog.Sinks.File.xml",
+        "lib/netstandard2.1/Serilog.Sinks.File.dll",
+        "lib/netstandard2.1/Serilog.Sinks.File.pdb",
+        "lib/netstandard2.1/Serilog.Sinks.File.xml",
+        "serilog.sinks.file.5.0.0.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
       ]
     },
     "System.Configuration.ConfigurationManager/5.0.0": {
@@ -1133,24 +1237,26 @@
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.17763": [
       "MaterialDesignThemes >= 4.3.0",
+      "Microsoft.Extensions.DependencyInjection >= 5.0.1",
       "NSManagament.Infrastrucure >= 1.0.0",
-      "Serilog >= 2.10.0"
+      "Serilog >= 2.10.0",
+      "Serilog.Sinks.File >= 5.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amir_\\.nuget\\packages\\": {}
+    "C:\\Users\\a.moradi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
       "projectName": "MahdeFooladWPF",
-      "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
-      "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
+      "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1164,8 +1270,8 @@
         "net5.0-windows10.0.17763": {
           "targetAlias": "net5.0-windows10.0.17763.0",
           "projectReferences": {
-            "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
-              "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
+            "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
+              "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
             }
           }
         }
@@ -1184,9 +1290,17 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[5.0.1, )"
+          },
           "Serilog": {
             "target": "Package",
             "version": "[2.10.0, )"
+          },
+          "Serilog.Sinks.File": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           }
         },
         "imports": [
@@ -1200,10 +1314,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.13, 5.0.13]"
-          },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
             "version": "[10.0.17763.22, 10.0.17763.22]"

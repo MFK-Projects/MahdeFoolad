@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "n85nudryKCp0YM6aoMqQg1NDJsZC1VZFmLtI4TY96AANg36eJDFY4OQTdUQ16WnHsA87D3yk9kp/QjAoy0zdoQ==",
+  "dgSpecHash": "dUAxAB6/ro56JKJ1gwOoIrAf+COAHNerHUIqSPKAy1ZoyH5TSFQv9bMyU8+a5G1prkb4XvlMszEPA9EoTbt9gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
+  "projectFilePath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\7.0.1\\microsoft.toolkit.uwp.notifications.7.0.1.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
-    "C:\\Users\\Amir_\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.22\\microsoft.windows.sdk.net.ref.10.0.17763.22.nupkg.sha512"
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\7.0.1\\microsoft.toolkit.uwp.notifications.7.0.1.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\a.moradi\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.22\\microsoft.windows.sdk.net.ref.10.0.17763.22.nupkg.sha512"
   ],
   "logs": []
 }

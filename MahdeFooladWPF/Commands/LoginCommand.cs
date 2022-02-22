@@ -4,6 +4,7 @@ using Serilog;
 using NSMangament.Application.Services;
 using System.Windows;
 using MahdeFooald.Common;
+using System.Windows.Controls;
 
 namespace MahdeFooladWPF.Commands
 {
@@ -39,16 +40,21 @@ namespace MahdeFooladWPF.Commands
             }
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
-            if (_userMananger.CheckPassword(parameter.ToString()).Result)
+            string password = (parameter as PasswordBox).Password;
+
+            if (await _userMananger.CheckPassword(password))
                 _userMananger.SetUserInfo(new NSMangament.Application.Models.UserModel
                 {
                     FullName = _userMananger.User.FullName,
-                    Password = parameter.ToString(),
+                    Password = password,
                     UserId = _userMananger.User.UserId,
                     UserName = _userMananger.User.UserName
                 });
+
+            new MainWindow().Show();
+            
         }
     }
 }

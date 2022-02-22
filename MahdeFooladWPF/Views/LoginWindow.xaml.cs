@@ -1,16 +1,12 @@
-﻿using System;
+﻿using MahdeFooladWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace MahdeFooladWPF.Views
 {
@@ -19,9 +15,35 @@ namespace MahdeFooladWPF.Views
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        public LoginWindow(UserLoginViewModel userloginViewModel)
         {
             InitializeComponent();
+
+            this.DataContext = userloginViewModel;
+        }
+
+        private async void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            await ShutdownApplication();
+        }
+
+        private async Task ShutdownApplication()
+        {
+            await Task.Delay(2000);
+            Application.Current.Shutdown();
+        }
+
+        private async void btnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            await CloseThisWndow();
+
+            new MainWindow().Show();
+        }
+
+        private async Task CloseThisWndow()
+        {
+            await Task.Delay(5000);
+            this.Close();
         }
     }
 }

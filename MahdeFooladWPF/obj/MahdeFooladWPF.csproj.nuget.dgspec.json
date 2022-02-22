@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj": {}
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
+        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
         "projectName": "MahdeFooald.Common",
-        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
-        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\obj\\",
+        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
+        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,17 +64,17 @@
         }
       }
     },
-    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj": {
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
         "projectName": "MahdeFooladWPF",
-        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
-        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
+        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net5.0-windows10.0.17763": {
             "targetAlias": "net5.0-windows10.0.17763.0",
             "projectReferences": {
-              "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
-                "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
+              "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
+                "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
               }
             }
           }
@@ -108,9 +108,17 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[2.10.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -124,10 +132,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.13, 5.0.13]"
-            },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
               "version": "[10.0.17763.22, 10.0.17763.22]"
@@ -148,17 +152,17 @@
         }
       }
     },
-    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
         "projectName": "NSManagament.Infrastrucure",
-        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
-        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\obj\\",
+        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSManagament.Infrastrucure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,11 +176,11 @@
           "net5.0-windows10.0.17763": {
             "targetAlias": "net5.0-windows10.0.17763.0",
             "projectReferences": {
-              "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
-                "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj"
+              "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
+                "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj"
               },
-              "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
-                "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj"
+              "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
+                "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj"
               }
             }
           }
@@ -232,17 +236,17 @@
         }
       }
     },
-    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
+    "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
+        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
         "projectName": "NSMangament.Application",
-        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
-        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\obj\\",
+        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
+        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

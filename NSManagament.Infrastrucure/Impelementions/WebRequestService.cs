@@ -16,11 +16,15 @@ namespace NSManagament.Infrastrucure.Impelementions
         private readonly WebClient _client;
         private bool _disposed;
         private static ILogger _logger;
+        private static object _lock = new();
         public WebRequestService(ILogger logger)
         {
-            _logger = logger;
-            _client = new WebClient();
-            _logger.Information($"object type of  {typeof(WebRequestService)} is created  and Private Feild {typeof(WebClient)} is initialized");
+            lock (_lock)
+            {
+                _logger = logger;
+                _client = new WebClient();
+                _logger.Information($"object type of  {typeof(WebRequestService)} is created  and Private Feild {typeof(WebClient)} is initialized");
+            }
         }
         public async Task<string> DownlaodStringData(DownloadStringModel downloadModel)
         {
