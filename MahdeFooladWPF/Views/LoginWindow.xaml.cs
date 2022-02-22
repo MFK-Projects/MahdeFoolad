@@ -33,16 +33,12 @@ namespace MahdeFooladWPF.Views
             Application.Current.Shutdown();
         }
 
-        private async void btnEnter_Click(object sender, RoutedEventArgs e)
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            await CloseThisWndow();
+            DoubleAnimation animation = new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(1.5)));
+            this.BeginAnimation(Window.OpacityProperty, animation);
 
             new MainWindow().Show();
-        }
-
-        private async Task CloseThisWndow()
-        {
-            await Task.Delay(5000);
             this.Close();
         }
     }

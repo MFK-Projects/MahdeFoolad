@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {}
+    "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
+    "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
+        "projectUniqueName": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
         "projectName": "NSMangament.Application",
-        "projectPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
-        "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullApplication\\MahdeFoolad\\NSMangament.Application\\obj\\",
+        "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj",
+        "packagesPath": "C:\\Users\\r.khaleghi\\.nuget\\packages\\",
+        "outputPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\r.khaleghi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

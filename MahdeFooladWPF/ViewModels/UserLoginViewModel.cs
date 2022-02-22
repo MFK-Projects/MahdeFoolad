@@ -18,7 +18,7 @@ namespace MahdeFooladWPF.ViewModels
         public UserLoginViewModel(ILogger logger, IUserMananger usermanager)
         {
             _userManager = usermanager;
-            _loginCommand = new LoginCommand(logger, usermanager);  
+            _loginCommand = new LoginCommand(logger, usermanager);
         }
 
 

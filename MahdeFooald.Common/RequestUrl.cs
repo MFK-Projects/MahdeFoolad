@@ -17,7 +17,7 @@ namespace MahdeFooald.Common
                                                          new_expired_task_code,new_log_path,new_name,new_notification_message,
                                                          new_notification_systemid,new_setting_timer,new_task_api,new_task_status,
                                                          new_task_types,new_time_awaited,new_time_check";
-        private const string _userSelectedItem = "fullname,domainname,identityid";
+        private const string _userSelectedItem = "fullname,identityid";
 
 
         public const string DomainName = "KIAN";

@@ -21,3 +21,15 @@ C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Deb
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.deps.json
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.pdb
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.GeneratedMSBuildEditorConfig.editorconfig
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfoInputs.cache
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfo.cs
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.CoreCompileInputs.cache
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
+Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb

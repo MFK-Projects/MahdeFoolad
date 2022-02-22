@@ -8,6 +8,7 @@ using Serilog;
 using System.IO;
 using Newtonsoft.Json;
 using NSMangament.Application.Services;
+using MahdeFooald.Common;
 
 namespace NSManagament.Infrastrucure.Impelementions
 {
@@ -16,14 +17,17 @@ namespace NSManagament.Infrastrucure.Impelementions
         private static readonly string _settitngFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\appSetting.json";
         private readonly ILogger _logger;
         private bool? _isSet;
-
+        private readonly IWebRequest _webRequest;
+        private readonly IUserMananger _userManager;
         public bool? IsSet
         {
             get => IsSet;
         }
-        public UtilityService(ILogger logger)
+        public UtilityService(ILogger logger, IWebRequest webRequest, IUserMananger userMananger)
         {
             _logger = logger;
+            _webRequest = webRequest;
+            _userManager = userMananger;
         }
 
         public void SetApplicationSetting(ApplicationSettingModel model)
@@ -54,7 +58,21 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         }
 
-        private string UrlBuilder(UrlBuilderModel model) { return string.Empty; }
-        private string TaskUrlBuilder(UrlBuilderModel model) { return string.Empty; }
+
+        public async Task ResetData()
+        {
+            var _jsondata = await _webRequest.DownlaodStringData(new DownloadStringModel
+            {
+                DomainName = RequestUrl.DomainName,
+                Password = _userManager.User.Password,
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.SingleUser, _userManager.User.UserName, null, null),
+                UserName = _userManager.User.CredentialName
+            });
+
+            var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
+
+            
+
+        }
     }
 }

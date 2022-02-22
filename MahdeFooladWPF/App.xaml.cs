@@ -42,13 +42,13 @@ namespace MahdeFooladWPF
             if (string.IsNullOrEmpty(_userService.User.Password))
             {
                 login = new(new UserLoginViewModel(_logger, _userService));
-               var result =  login.ShowDialog();
+                login.ShowDialog();
                 
             }
             else
             {
                 mainWindow = new();
-                mainWindow.Show();
+                mainWindow.ShowDialog();
             }
         }
     }

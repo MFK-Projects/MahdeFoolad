@@ -52,9 +52,8 @@ namespace MahdeFooladWPF.Commands
                     UserId = _userMananger.User.UserId,
                     UserName = _userMananger.User.UserName
                 });
-
-            new MainWindow().Show();
-            
+            else
+                MessageBox.Show("رمز عبور وارد شده اشتباه است");
         }
     }
 }
