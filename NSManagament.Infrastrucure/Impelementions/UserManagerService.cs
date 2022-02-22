@@ -58,11 +58,14 @@ namespace NSManagament.Infrastrucure.Impelementions
                 DomainName = RequestUrl.DomainName,
             });
 
-            var userdata = JsonConvert.DeserializeObject<UserModel>(_jsondata);
+            var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
 
             if (userdata == null) return await Task.FromResult(false);
 
-            _user = userdata;
+            var tempuser = userdata.Entities.FirstOrDefault();
+
+            _user.FullName = tempuser.FullName;
+            _user.UserId = tempuser.UserId;
             return await Task.FromResult(true);
         }
         public Task<bool> CheckPassword(string userName, string password)

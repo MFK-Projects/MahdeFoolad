@@ -39,7 +39,9 @@
                 <GradientStop Color="#48cae4" Offset="1.1"/>
             </LinearGradientBrush>
         </Border.Background>
-        <Grid Background="Transparent">
+        <Grid 
+            Name="MainPanel"
+            Background="Transparent">
             <Grid
                 Margin="-860 0 0 0"
                 Name="logingrid">
@@ -101,7 +103,7 @@
                             <Button
                             Name="btnEnter"
                             Click="btnEnter_Click"
-                            Command="{Binding LoginCommand}"
+                            Command="{Binding LoginCommand,IsAsync=True}"
                             CommandParameter="{Binding ElementName=txtpassword}"
                             VerticalContentAlignment="Center"
                             Content="ورود"
@@ -113,14 +115,13 @@
                                     <EventTrigger RoutedEvent="Button.Click">
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <ThicknessAnimation Duration="0:0:2"
-                                                                    BeginTime="0:0:4"
-                                                                    To="860,0,0,0"
-                                                                     Storyboard.TargetProperty="Margin"
-                                                                    Storyboard.TargetName="logingrid">
+                                                <ThicknessAnimation
+                                                    Storyboard.TargetName="logingrid"
+                                                    Storyboard.TargetProperty="Margin"
+                                                    To="860,0,0,0"
+                                                    Duration="0:0:2">
                                                     <ThicknessAnimation.EasingFunction>
-                                                        <SineEase
-                                                            EasingMode="EaseIn" />
+                                                        <CubicEase  EasingMode="EaseIn" />
                                                     </ThicknessAnimation.EasingFunction>
                                                 </ThicknessAnimation>
                                             </Storyboard>

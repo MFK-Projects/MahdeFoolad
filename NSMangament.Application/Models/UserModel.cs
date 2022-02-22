@@ -16,9 +16,11 @@ namespace NSMangament.Application.Models
 
         [JsonProperty("fullname")]
         public string FullName { get; set; }
-      
-        [JsonProperty("identityid")]
+
+
+        [JsonProperty("ownerid")]
         public string UserId { get; set; }
+
     }
 
 

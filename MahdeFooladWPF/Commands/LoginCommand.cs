@@ -5,6 +5,8 @@ using NSMangament.Application.Services;
 using System.Windows;
 using MahdeFooald.Common;
 using System.Windows.Controls;
+using Newtonsoft.Json;
+using System.Threading;
 
 namespace MahdeFooladWPF.Commands
 {
@@ -45,13 +47,18 @@ namespace MahdeFooladWPF.Commands
             string password = (parameter as PasswordBox).Password;
 
             if (await _userMananger.CheckPassword(password))
-                _userMananger.SetUserInfo(new NSMangament.Application.Models.UserModel
+            {
+                _userMananger.User.Password = password;
+                bool operationcheck = await _userMananger.RetriveFromCRM();
+
+                if (!operationcheck)
                 {
-                    FullName = _userMananger.User.FullName,
-                    Password = password,
-                    UserId = _userMananger.User.UserId,
-                    UserName = _userMananger.User.UserName
-                });
+                    MessageBox.Show("Can not retive data from CRM  for curent user please contact with the supporters");
+                    return;
+                }
+                else
+                    _userMananger.SetUserInfo(_userMananger.User);
+            }
             else
                 MessageBox.Show("رمز عبور وارد شده اشتباه است");
         }

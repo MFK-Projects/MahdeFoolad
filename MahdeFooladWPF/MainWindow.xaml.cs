@@ -23,6 +23,19 @@ namespace MahdeFooladWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public ICommand LoadedCommand
+        {
+            get { return (ICommand)GetValue(LoadCommandProperty); }
+            set { SetValue(LoadCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty LoadCommandProperty =
+            DependencyProperty.Register("LoadedCommand", typeof(ICommand), typeof(MainWindow), new PropertyMetadata(null));
+
+
+
+
         private static Duration _duration = new(TimeSpan.FromSeconds(0.6));
         public MainWindow()
         {
@@ -64,5 +77,12 @@ namespace MahdeFooladWPF
             taskswindow.ShowDialog();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(LoadedCommand != null)
+            {
+                LoadedCommand.Execute(null);
+            }
+        }
     }
 }

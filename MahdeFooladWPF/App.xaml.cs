@@ -43,6 +43,9 @@ namespace MahdeFooladWPF
             {
                 login = new(new UserLoginViewModel(_logger, _userService));
                 login.ShowDialog();
+
+                mainWindow = new MainWindow();
+                mainWindow.Show();
                 
             }
             else

@@ -18,8 +18,14 @@ namespace MahdeFooladWPF.Views
         public LoginWindow(UserLoginViewModel userloginViewModel)
         {
             InitializeComponent();
-
+            this.Closing += LoginWindow_Closing;
             this.DataContext = userloginViewModel;
+        }
+
+        private void LoginWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DoubleAnimation animation = new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(2)));
+            this.BeginAnimation(Window.OpacityProperty, animation);
         }
 
         private async void btnClose_Click(object sender, RoutedEventArgs e)
@@ -35,11 +41,11 @@ namespace MahdeFooladWPF.Views
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            DoubleAnimation animation = new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(1.5)));
-            this.BeginAnimation(Window.OpacityProperty, animation);
-
-            new MainWindow().Show();
-            this.Close();
+            this.Dispatcher.Invoke(async () => 
+            {
+                await Task.Delay(3000);
+                this.Close();
+            });
         }
     }
 }

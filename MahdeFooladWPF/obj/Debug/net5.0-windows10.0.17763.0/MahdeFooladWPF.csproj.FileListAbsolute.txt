@@ -139,7 +139,6 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\bin\Debug\net5.0-windows10
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\MahdeFooladWPF.csproj.AssemblyReference.cache
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\MainWindow.g.cs
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\UserControls\MultiMenu.g.cs
-Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\LoginView.g.cs
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\LoginWindow.g.cs
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\TasksListView.g.cs
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\TaskView.g.cs
@@ -149,7 +148,6 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\App.baml
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\MainWindow.baml
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\UserControls\MultiMenu.baml
-Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\LoginView.baml
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\LoginWindow.baml
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\TasksListView.baml
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\TaskView.baml
