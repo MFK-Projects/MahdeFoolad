@@ -20,7 +20,7 @@ namespace MahdeFooladWPF.Views
     /// </summary>
     public partial class TasksListView : Window
     {
-        public TasksListView(MainWindowViewModel viewModel )
+        public TasksListView(MainWindowViewModel viewModel)
         {
             InitializeComponent();
             this.DataContext = viewModel;

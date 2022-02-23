@@ -3,3 +3,8 @@
 2022-02-23 16:15:18.958 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
 2022-02-23 16:16:23.341 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
 2022-02-23 16:19:25.547 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
+2022-02-23 16:37:14.049 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
+2022-02-23 16:39:21.167 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
+2022-02-23 16:42:31.676 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
+2022-02-23 16:45:34.116 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
+2022-02-23 19:15:32.473 +03:30 [INF] object type of  NSManagament.Infrastrucure.Impelementions.WebRequestService is created  and Private Feild System.Net.WebClient is initialized
