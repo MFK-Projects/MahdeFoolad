@@ -38,18 +38,14 @@ namespace MahdeFooladWPF.ViewModels
 
         private void OpenTaskListWindow(object paramter)
         {
-            FillTaksCollection();
+            // FillTaksCollection();
 
-            new TasksListView(this).ShowDialog();
+            new TasksListView().ShowDialog();
         }
         private void GetData(object paramter)
         {
-
-
             if (FillTaksCollection())
                 MessageBox.Show("عملیات با موفقیت انجام شد");
-
-
         }
 
 
