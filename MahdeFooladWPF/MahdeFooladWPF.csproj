@@ -17,10 +17,6 @@
 		<Resource Include="Fonts\Vazir-Light.ttf" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
-	</ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />

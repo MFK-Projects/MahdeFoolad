@@ -7,6 +7,7 @@ using NSMangament.Application.Services;
 using NSManagament.Infrastrucure.Impelementions;
 using MahdeFooladWPF.Views;
 using MahdeFooladWPF.ViewModels;
+using System.Threading;
 
 namespace MahdeFooladWPF
 {
@@ -15,7 +16,8 @@ namespace MahdeFooladWPF
     /// </summary>
     public partial class App : Application
     {
-
+       private MainWindow mainWindow;
+       private LoginWindow login;
         private static string _loginPath = AppDomain.CurrentDomain.BaseDirectory + @"\ApplicationLoggin\log_file.txt";
 
         private readonly ILogger _logger;
@@ -35,8 +37,7 @@ namespace MahdeFooladWPF
         }
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            MainWindow mainWindow;
-            LoginWindow login;
+
             var _userService = _serviceProvider.GetService<IUserMananger>();
 
             if (string.IsNullOrEmpty(_userService.User.Password))
@@ -44,14 +45,23 @@ namespace MahdeFooladWPF
                 login = new(new UserLoginViewModel(_logger, _userService));
                 login.ShowDialog();
 
+                if (login.IsClosed)
+                    return;
+
                 mainWindow = new MainWindow();
-                mainWindow.ShowDialog(); 
+                mainWindow.ShowDialog();
             }
             else
             {
                 mainWindow = new();
                 mainWindow.ShowDialog();
             }
+        }
+
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
         }
     }
 }

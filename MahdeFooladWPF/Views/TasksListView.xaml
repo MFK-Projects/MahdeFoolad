@@ -16,28 +16,6 @@
         </Grid.RowDefinitions>
 
         <WrapPanel>
-            <Button>
-                <Button.Template>
-                    <ControlTemplate>
-                        <Border Margin="5"                               
-                                Padding="5"
-                                CornerRadius="2"
-                                Background="red"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                            <materialdesign:PackIcon Kind="Close"
-                                                     VerticalContentAlignment="Center"
-                                                     Foreground="white"/>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
 
 
             <StackPanel Width="300" Height="auto"
@@ -105,8 +83,6 @@
                                             Opacity="1"
                                             Margin="1"
                                             CornerRadius="50">
-                                            <materialdesign:PackIcon Kind="Check"
-                                                                     Foreground="White"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
@@ -124,9 +100,5 @@
 
             </StackPanel>
         </ScrollViewer>
-
-        <StackPanel>
-
-        </StackPanel>
     </Grid>
 </Window>

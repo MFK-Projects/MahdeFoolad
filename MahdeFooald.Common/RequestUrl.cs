@@ -12,15 +12,14 @@ namespace MahdeFooald.Common
         private const string taskurl = "http://crm-srv:8585/MFkian/main.aspx?etn=";
         private const string _taskSelectedItem = @"activityid,new_remained_time_hour,
                                         new_remaining_days,new_task_status,new_task_type,subject,prioritycode,
-                                        description,new_telephone,_new_date_deadline_value,_ownerid_value";
+                                        description,new_telephone,_new_date_deadline_value,_ownerid_value,new_notification_threshold";
         private const string _settingCrmSelectedItem = @"new_api_url,new_baseurl,new_day_filter,new_domain_name,new_entity_name,
                                                          new_expired_task_code,new_log_path,new_name,new_notification_message,
                                                          new_notification_systemid,new_setting_timer,new_task_api,new_task_status,
                                                          new_task_types,new_time_awaited,new_time_check";
         private const string _userSelectedItem = "fullname,identityid";
-
-
         public const string DomainName = "KIAN";
+
 
         public static string BuildUrl(UrlBuilderMode mode, string ownerId, string tasksId,string userId)
         {

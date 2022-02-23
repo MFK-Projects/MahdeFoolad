@@ -36,21 +36,20 @@ namespace MahdeFooladWPF
             QuarticEase easing = new();
             easing.EasingMode = EasingMode.EaseInOut;
 
+            //if (Stpanel.Width == 260)
+            //{
+            //    animation = new(45, _duration);
+            //}
+            //else
+            //{
+            //    animation = new(260, _duration);
 
-            if (Stpanel.Width == 260)
-            {
-                animation = new(45, _duration);
-                toggleBtnContent.Kind = MaterialDesignThemes.Wpf.PackIconKind.ArrowRight;
-            }
-            else
-            {
-                animation = new(260, _duration);
-                toggleBtnContent.Kind = MaterialDesignThemes.Wpf.PackIconKind.ArrowLeft;
-            }
+            //}
 
 
-            animation.EasingFunction = easing;
-            Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
+           // animation.EasingFunction = easing;
+          //  Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
+
         }
 
         private void TopStackPanel_MouseDowned(object sender, MouseButtonEventArgs e)
@@ -65,8 +64,10 @@ namespace MahdeFooladWPF
             taskswindow.ShowDialog();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+
+        private void MainNotification_Loaded(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

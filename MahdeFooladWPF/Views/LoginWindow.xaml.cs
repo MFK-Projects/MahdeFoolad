@@ -15,6 +15,8 @@ namespace MahdeFooladWPF.Views
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public bool IsClosed { get; set; }
+
         public LoginWindow(UserLoginViewModel userloginViewModel)
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace MahdeFooladWPF.Views
         private async Task ShutdownApplication()
         {
             await Task.Delay(2000);
+            IsClosed = true;
             Application.Current.Shutdown();
         }
 

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MahdeFooladWPF.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign1="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Background="Transparent"
         WindowStyle="None"
@@ -59,12 +59,16 @@
                         BlurRadius="8"
                         Direction="180"/>
                     </Border.Effect>
-                    <materialDesign:PackIcon Kind="User" Width="80" Height="80"
-                                     Foreground="White"
-                                     VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
-                </Border>
 
+                    <materialDesign1:PackIcon Kind="User" 
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Width="100"
+                                              Foreground="White"
+                                              Height="100"/>
+
+
+                </Border>
                 <Border
                 VerticalAlignment="Center"
                 Background="AliceBlue"
@@ -94,8 +98,6 @@
                                 TabIndex="1" 
                                 Grid.Row="1" 
                                 Padding="6"
-                                materialDesign:HintAssist.IsFloating="True"    
-                                materialDesign:HintAssist.Hint="رمز عبور"
                                 VerticalAlignment="Top"/>
 
 
