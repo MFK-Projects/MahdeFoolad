@@ -27,18 +27,12 @@ namespace MahdeFooladWPF
     public partial class MainWindow : Window
     {
 
+        private static MainWindowViewModel _viewModel;
         private static Duration _duration = new(TimeSpan.FromSeconds(0.6));
-
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-
         public MainWindow(MainWindowViewModel viewModel)
         {
             InitializeComponent();
-            this.DataContext = viewModel;
+            this.DataContext = _viewModel = viewModel;
         }
 
         private void ToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -48,7 +42,7 @@ namespace MahdeFooladWPF
             QuarticEase easing = new();
             PackIcon icons = new();
 
-          
+
             easing.EasingMode = EasingMode.EaseInOut;
 
             if (Stpanel.Width == 260)
@@ -75,14 +69,10 @@ namespace MahdeFooladWPF
             this.DragMove();
         }
 
-        private void MainNotification_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            _viewModel.UpdateProggressBarCommand?.Execute(null);
+            _viewModel.RetriveDataCommand?.Execute(null);
         }
     }
 }

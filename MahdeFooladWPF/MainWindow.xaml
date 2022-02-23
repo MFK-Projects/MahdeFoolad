@@ -8,8 +8,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         ResizeMode="NoResize"
-        WindowStyle="None"
+        WindowStyle="None" 
         Title="MainWindow" Height="260" Width="600">
     <Grid>
         <Grid.Background>
@@ -61,7 +62,7 @@
                                 <Storyboard>
                                     <DoubleAnimation
                                         Duration=" 0:0:1"
-                                        To="210"
+                                        To="220"
                                         Storyboard.TargetName="navbar"
                                         Storyboard.TargetProperty="Width">
 
@@ -89,7 +90,7 @@
                 Margin="10,10,10,10" Grid.ColumnSpan="2">
                 <StackPanel
 >
-                    <TextBlock Text="تست این نرم افزار نمایش" Padding="10"
+                    <TextBlock Text="{Binding NotificationTitle}" Padding="10"
                            FontWeight="SemiBold"
                            Foreground="AliceBlue"
                            HorizontalAlignment="Right"
@@ -102,9 +103,7 @@
                     TextWrapping="Wrap"
                     Padding="10"
                     FlowDirection="RightToLeft"
-                    Text="this operation should have the number for the this prepus of our posigion for the doing stuf or create new brand car for the tesla"/>
-
-
+                    Text="{Binding NotificationDescripton}" />
 
                     <Border
                         Background="#ced4da"
@@ -160,6 +159,7 @@
             </Border.Effect>
             <StackPanel>
                 <Button Background="Transparent"
+                        Foreground="DarkRed"
                         Name="MenuCloseBtn"
                         BorderBrush="Transparent"
                         Margin="5" HorizontalAlignment="Left">
@@ -170,6 +170,7 @@
                                     Background="Transparent"
                                     Padding="5"
                                     VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Close"/>
                                 <Border.Style>
                                     <Style TargetType="{x:Type Border}">
                                         <Style.Triggers>
@@ -220,8 +221,9 @@
                         </EventTrigger>
                     </Button.Triggers>
                 </Button>
-                <TextBlock Text="کاربر امیر حسین مرادی" 
-                       HorizontalAlignment="Right"
+                <TextBlock 
+                        Text="{Binding FullName,Mode=OneWay}" 
+                       HorizontalAlignment="Center"
                        Margin="0 4 5 10"
                        VerticalAlignment="Center"
                        FontSize="18"

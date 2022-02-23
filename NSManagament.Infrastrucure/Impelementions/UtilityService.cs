@@ -14,6 +14,8 @@ namespace NSManagament.Infrastrucure.Impelementions
 {
     public class UtilityService : IUtilityService
     {
+        private static List<TaskModel> _tasks;
+        private readonly static object _lokcer = new();
         private static readonly string _settitngFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\appSetting.json";
         private readonly ILogger _logger;
         private bool? _isSet;
@@ -28,7 +30,6 @@ namespace NSManagament.Infrastrucure.Impelementions
             _webRequest = webRequest;
             _userManager = userMananger;
         }
-
         public void SetApplicationSetting(ApplicationSettingModel model)
         {
             try
@@ -56,8 +57,6 @@ namespace NSManagament.Infrastrucure.Impelementions
             }
 
         }
-
-
         public async Task ResetData()
         {
             var _jsondata = await _webRequest.DownlaodStringData(new DownloadStringModel
@@ -68,12 +67,10 @@ namespace NSManagament.Infrastrucure.Impelementions
                 UserName = _userManager.User.CredentialName
             });
 
-            var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
+           // var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
 
-
-
+            // Not Compelete Yet
         }
-
         public async Task<List<TaskModel>> RetriveData()
         {
             var _jsondata = await _webRequest.DownlaodStringData(new DownloadStringModel

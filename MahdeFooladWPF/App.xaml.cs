@@ -18,7 +18,7 @@ namespace MahdeFooladWPF
     {
         private MainWindow mainWindow;
         private LoginWindow login;
-        private static string _loginPath = AppDomain.CurrentDomain.BaseDirectory + @"\ApplicationLoggin\log_file.txt";
+        private readonly static string _loginPath = AppDomain.CurrentDomain.BaseDirectory + @"\ApplicationLoggin\log_file.txt";
         private MainWindowViewModel _mainViewModel;
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;
@@ -41,7 +41,7 @@ namespace MahdeFooladWPF
 
             var _userService = _serviceProvider.GetService<IUserMananger>();
             var _uilityService = _serviceProvider.GetService<IUtilityService>();
-            _mainViewModel = new MainWindowViewModel(_logger, _serviceProvider.GetService<IUtilityService>());
+            _mainViewModel = new MainWindowViewModel(_logger,_uilityService,_userService);
 
             if (string.IsNullOrEmpty(_userService.User.Password))
             {

@@ -3,8 +3,11 @@ using MahdeFooladWPF.Views;
 using NSMangament.Application.Models;
 using NSMangament.Application.Services;
 using Serilog;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Input;
 
@@ -13,33 +16,46 @@ namespace MahdeFooladWPF.ViewModels
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        #region Private Fields
+        private readonly ILogger _logger;
+        private readonly IUtilityService _utilityService;
         private ICommand _retriveDataCommand;
         private ICommand _taskListCommand;
-        private readonly ILogger _logger;
-        private IUtilityService _utilityService;
-        private TaskModel _curentTask;
-        private TaskModel CurentTask { get => _curentTask; set => _curentTask = value; }
-        private ObservableCollection<TaskModel> tasklist = new ObservableCollection<TaskModel>();
+        private readonly IUserMananger _userManager;
+        private static readonly int rnd = new Random().Next(60000, (60000 * 3));
+        private static readonly Timer _retrivedataTimer = new();
+        #endregion
 
 
+        public ICommand CloseCommand { get; set; }
+        public ICommand MinimizedCommand { get; set; }
+        public ICommand UpdateProggressBarCommand { get; set; }
+        public ICommand RetriveDataCommand { get; set; }
         public ICommand RestDataCommand => _retriveDataCommand;
         public ICommand TaskListCommand => _taskListCommand;
 
-        public ObservableCollection<TaskModel> Tasks { get => tasklist; set => tasklist = value; }
 
-        public MainWindowViewModel(ILogger logger, IUtilityService utilityService)
+        public string FullName { get => _userManager.User.FullName; }
+
+        public MainWindowViewModel(ILogger logger, IUtilityService utilityService, IUserMananger userMananger)
         {
-            _logger = logger;
             _utilityService = utilityService;
-            _retriveDataCommand = new RetriveDataCommand(GetData);
-            _taskListCommand = new TaskListCommand(OpenTaskListWindow);
+            _userManager = userMananger;
+            _logger = logger;
+            RegisterEvents();
+
         }
 
+        private void RegisterEvents()
+        {
+            MinimizedCommand = new MinizedWidnowCommand(WindowMinimized);
+            _retriveDataCommand = new RetriveDataCommand(GetData);
+            _taskListCommand = new TaskListCommand(OpenTaskListWindow);
+            CloseCommand = new CloseCommand(WindowClose);
+        }
 
         private void OpenTaskListWindow(object paramter)
         {
-            // FillTaksCollection();
-
             new TasksListView().ShowDialog();
         }
         private void GetData(object paramter)
@@ -47,23 +63,40 @@ namespace MahdeFooladWPF.ViewModels
             if (FillTaksCollection())
                 MessageBox.Show("عملیات با موفقیت انجام شد");
         }
-
-
-
-
         private bool FillTaksCollection()
         {
             var checkdata = _utilityService.RetriveData();
 
             if (checkdata.Result != null)
-           {
-                foreach (var item in checkdata.Result)
-                    if (tasklist.Where(x => x.ActivityId != item.ActivityId) != null)
-                        tasklist.Add(item);
+            {
                 return true;
             }
 
             return false;
         }
+        private void WindowMinimized(object paramter)
+        {
+            var window = paramter as Window;
+            window.WindowState = WindowState.Minimized;
+            window.Visibility = Visibility.Hidden;
+        }
+        private void WindowClose(object paramter)
+        {
+            var window = paramter as Window;
+            window.Close();
+        }
+
+        private Task UpdateProgressBar()
+        {
+            return Task.CompletedTask;
+        }
+
+
+        /*
+        Task<List<TaskModel>> MostRecentTasks();
+        Task<List<TaskModel>> ExpiredTasks();
+        Task<List<TaskModel>> HighPriorityTasks();
+        TaskModel MostPriorityTask();
+        TaskModel ExpireingTask();*/
     }
 }

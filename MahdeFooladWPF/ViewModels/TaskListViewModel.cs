@@ -19,7 +19,6 @@ namespace MahdeFooladWPF.ViewModels
         private void Close(object paramter)
         {
             var curentWindow = paramter as Window;
-
             curentWindow.Close();
         }
     }

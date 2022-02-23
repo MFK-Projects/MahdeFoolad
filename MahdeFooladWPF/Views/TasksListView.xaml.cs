@@ -21,7 +21,7 @@ namespace MahdeFooladWPF.Views
     public partial class TasksListView : Window
     {
 
-        private TaskListViewModel _taskListvm = new TaskListViewModel();
+        private readonly TaskListViewModel _taskListvm = new();
         public TasksListView()
         {
             InitializeComponent();

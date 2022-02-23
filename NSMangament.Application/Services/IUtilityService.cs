@@ -6,7 +6,7 @@ namespace NSMangament.Application.Services
 {
     public interface IUtilityService
     {
-       void SetApplicationSetting(ApplicationSettingModel model);
+        void SetApplicationSetting(ApplicationSettingModel model);
         Task<List<TaskModel>> RetriveData();
     }
 }
