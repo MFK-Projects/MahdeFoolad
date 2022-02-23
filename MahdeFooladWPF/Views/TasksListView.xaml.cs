@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahdeFooladWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,10 @@ namespace MahdeFooladWPF.Views
     /// </summary>
     public partial class TasksListView : Window
     {
-        public TasksListView()
+        public TasksListView(MainWindowViewModel viewModel )
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }

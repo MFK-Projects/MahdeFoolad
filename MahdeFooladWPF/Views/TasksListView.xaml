@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MahdeFooladWPF.Views"
         xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         mc:Ignorable="d"
         Title="TasksListView" Height="500" Width="350">
@@ -30,75 +30,80 @@
 
         <ScrollViewer Grid.Row="1"
                       VerticalScrollBarVisibility="Auto">
-            <StackPanel >
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <Label >
-                        <Label.Template>
-                            <ControlTemplate>
-                                <Ellipse Width="10" Height="10"
+
+
+            <ListBox  ItemsSource="{Binding Tasks}">
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Label >
+                            <Label.Template>
+                                <ControlTemplate>
+                                    <Ellipse Width="10" Height="10"
                                      Fill="Red"
                                      Margin="10"
 >
-                                    <Ellipse.Effect>
-                                        <DropShadowEffect Color="Gray"                                                       
+                                        <Ellipse.Effect>
+                                            <DropShadowEffect Color="Gray"                                                       
                                                       ShadowDepth="2" Opacity="0.8"
                                                       Direction="260"/>
-                                    </Ellipse.Effect>
-                                </Ellipse>
-                            </ControlTemplate>
-                        </Label.Template>
-                    </Label>
-                    <StackPanel>
-                        <StackPanel.Background>
-                            <LinearGradientBrush >
-                                <GradientStop  Color="#FAF3F3" Offset="0"/>
-                                <GradientStop  Color="#FAF3F3" Offset="1.1"/>
-                            </LinearGradientBrush>
-                        </StackPanel.Background>
-                        <StackPanel.Effect>
-                            <DropShadowEffect
+                                        </Ellipse.Effect>
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Label.Template>
+                        </Label>
+                        <StackPanel>
+                            <StackPanel.Background>
+                                <LinearGradientBrush >
+                                    <GradientStop  Color="#FAF3F3" Offset="0"/>
+                                    <GradientStop  Color="#FAF3F3" Offset="1.1"/>
+                                </LinearGradientBrush>
+                            </StackPanel.Background>
+                            <StackPanel.Effect>
+                                <DropShadowEffect
                             Color="#524A4E"
                             ShadowDepth="0"
                             Opacity="0.7"
                             BlurRadius="4"
                             Direction="270"/>
-                        </StackPanel.Effect>
+                            </StackPanel.Effect>
 
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock 
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock 
                        HorizontalAlignment="Left"
                         TextWrapping="Wrap"
-                        Text="for test purposes and use of reqular experise" 
+                        Text="{Binding Subject}" 
                         Padding="5"/>
 
-                            <Button Cursor="Hand"
+                                <Button Cursor="Hand"
                                     VerticalAlignment="Top">
-                                
-                                <Button.Template>
-                                    <ControlTemplate >
-                                        <Border
+
+                                    <Button.Template>
+                                        <ControlTemplate >
+                                            <Border
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Top"
                                             Background="Green"
                                             Opacity="1"
                                             Margin="1"
                                             CornerRadius="50">
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                        <TextBlock  Text="1400/12/22"
+                            <Label  Content="{Binding DeadLine.DeadLineValue }"
+                                    ContentStringFormat=" مهلت انجام {0}"
                                 Grid.Row="1"
                                 Foreground="Gray"
                                 HorizontalAlignment="Right"
                                 Padding="5 0 5 0"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
 
-            </StackPanel>
+                </StackPanel>
+            </ListBox>
         </ScrollViewer>
     </Grid>
 </Window>

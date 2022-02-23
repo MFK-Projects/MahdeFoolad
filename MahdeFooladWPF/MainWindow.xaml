@@ -231,7 +231,7 @@
 
                 <Button
                     Name="OpTasksWidnowBtn"
-                    Click="OpTasksWidnowBtn_Click"
+                    Command="{Binding TaskListCommand}"
                     Foreground="Black"
                     Margin="5 6"
                     HorizontalContentAlignment="Right">

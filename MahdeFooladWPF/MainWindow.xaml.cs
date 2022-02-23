@@ -75,14 +75,6 @@ namespace MahdeFooladWPF
             this.DragMove();
         }
 
-        private void OpTasksWidnowBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var taskswindow = new TasksListView();
-            taskswindow.Owner = this;
-            taskswindow.ShowDialog();
-        }
-
-
         private void MainNotification_Loaded(object sender, RoutedEventArgs e)
         {
 
