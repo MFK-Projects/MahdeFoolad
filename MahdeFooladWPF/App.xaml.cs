@@ -16,10 +16,10 @@ namespace MahdeFooladWPF
     /// </summary>
     public partial class App : Application
     {
-       private MainWindow mainWindow;
-       private LoginWindow login;
+        private MainWindow mainWindow;
+        private LoginWindow login;
         private static string _loginPath = AppDomain.CurrentDomain.BaseDirectory + @"\ApplicationLoggin\log_file.txt";
-
+        private MainWindowViewModel _mainViewModel;
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;
 
@@ -30,8 +30,9 @@ namespace MahdeFooladWPF
                           .CreateLogger();
 
             _serviceProvider = new ServiceCollection()
-                                    .AddTransient<IWebRequest, WebRequestService>(x => new WebRequestService(_logger))
+                                    .AddSingleton<IWebRequest, WebRequestService>(x => new WebRequestService(_logger))
                                     .AddSingleton<IUserMananger, UserManagerService>(x => new UserManagerService(x.GetRequiredService<IWebRequest>()))
+                                    .AddScoped<IUtilityService, UtilityService>(x => new UtilityService(x.GetRequiredService<IWebRequest>(), x.GetRequiredService<IUserMananger>()))
                                     .BuildServiceProvider();
 
         }
@@ -39,6 +40,8 @@ namespace MahdeFooladWPF
         {
 
             var _userService = _serviceProvider.GetService<IUserMananger>();
+            var _uilityService = _serviceProvider.GetService<IUtilityService>();
+            _mainViewModel = new MainWindowViewModel(_logger, _serviceProvider.GetService<IUtilityService>());
 
             if (string.IsNullOrEmpty(_userService.User.Password))
             {
@@ -48,20 +51,14 @@ namespace MahdeFooladWPF
                 if (login.IsClosed)
                     return;
 
-                mainWindow = new MainWindow();
+                mainWindow = new(_mainViewModel);
                 mainWindow.ShowDialog();
             }
             else
             {
-                mainWindow = new();
+                mainWindow = new(_mainViewModel);
                 mainWindow.ShowDialog();
             }
-        }
-
-
-        protected override void OnExit(ExitEventArgs e)
-        {
-            base.OnExit(e);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace NSMangament.Application.Models
         public string RemaingHour { get; set; }
 
         [JsonProperty("new_remaining_days")]
-        public byte RemainingDay { get; set; }
+        public int RemainingDay { get; set; }
 
         [JsonProperty("activityid")]
         public string ActivityId { get; set; }

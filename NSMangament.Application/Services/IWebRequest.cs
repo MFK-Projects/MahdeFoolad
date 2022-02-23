@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NSMangament.Application.Services
 {
-    public interface IWebRequest : IDisposable
+    public interface IWebRequest 
     {
         Task<string> DownlaodStringData(DownloadStringModel downlaodModel);
     }

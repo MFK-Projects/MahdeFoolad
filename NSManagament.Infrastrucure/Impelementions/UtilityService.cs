@@ -23,9 +23,8 @@ namespace NSManagament.Infrastrucure.Impelementions
         {
             get => IsSet;
         }
-        public UtilityService(ILogger logger, IWebRequest webRequest, IUserMananger userMananger)
+        public UtilityService(IWebRequest webRequest, IUserMananger userMananger)
         {
-            _logger = logger;
             _webRequest = webRequest;
             _userManager = userMananger;
         }
@@ -71,8 +70,27 @@ namespace NSManagament.Infrastrucure.Impelementions
 
             var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
 
-            
 
+
+        }
+
+        public async Task<List<TaskModel>> RetriveData()
+        {
+            var _jsondata = await _webRequest.DownlaodStringData(new DownloadStringModel
+            {
+                DomainName = RequestUrl.DomainName,
+                Password = _userManager.User.Password,
+                UserName = _userManager.User.CredentialName,
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.MultipuleTasks, null, null, _userManager.User.UserId)
+            });
+
+            var tasksdata = JsonConvert.DeserializeObject<RootListModel<TaskModel>>(_jsondata);
+
+
+            if (tasksdata.Entities.Count > 0)
+                return await Task.FromResult(tasksdata.Entities);
+            else
+                return await Task.FromResult<List<TaskModel>>(null);
         }
     }
 }

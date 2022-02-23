@@ -29,14 +29,6 @@ namespace MahdeFooladWPF.Commands
             var result = MessageBox.Show("باز گردانی تنظیمات به حالت اول ؟",string.Empty,MessageBoxButton.YesNo,MessageBoxImage.Warning);
 
             if (result != MessageBoxResult.Yes) return;
-
-           //var _jsondata =  _webRequest.DownlaodStringData(new NSMangament.Application.Models.DownloadStringModel
-           // {
-           //     DomainName = RequestUrl.DomainName,
-           //     Password = _userManager.User.Password,
-           //     UserName = _userManager.User.CredentialName,
-           //     Url  = RequestUrl.BuildUrl(UrlBuilderMode.Setting)
-           // });
         }
     }
 }

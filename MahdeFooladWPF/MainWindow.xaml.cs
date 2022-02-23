@@ -1,4 +1,7 @@
-﻿using MahdeFooladWPF.Views;
+﻿using MahdeFooladWPF.ViewModels;
+using MahdeFooladWPF.Views;
+using MaterialDesignThemes.Wpf;
+using NSMangament.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,30 +28,45 @@ namespace MahdeFooladWPF
     {
 
         private static Duration _duration = new(TimeSpan.FromSeconds(0.6));
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+
+        public MainWindow(MainWindowViewModel viewModel)
+        {
+            InitializeComponent();
+            this.DataContext = viewModel;
+        }
+
         private void ToggleBtn_Click(object sender, RoutedEventArgs e)
         {
+
             DoubleAnimation animation;
             QuarticEase easing = new();
+            PackIcon icons = new();
+
+          
             easing.EasingMode = EasingMode.EaseInOut;
 
-            //if (Stpanel.Width == 260)
-            //{
-            //    animation = new(45, _duration);
-            //}
-            //else
-            //{
-            //    animation = new(260, _duration);
+            if (Stpanel.Width == 260)
+            {
+                icons.Kind = PackIconKind.ArrowRight;
+                ToggleBtn.Content = icons;
+                animation = new(45, _duration);
+            }
+            else
+            {
+                icons.Kind = PackIconKind.ArrowLeft;
+                ToggleBtn.Content = icons;
+                animation = new(260, _duration);
+            }
 
-            //}
 
-
-           // animation.EasingFunction = easing;
-          //  Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
+            animation.EasingFunction = easing;
+            Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
 
         }
 
@@ -68,6 +86,11 @@ namespace MahdeFooladWPF
         private void MainNotification_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
