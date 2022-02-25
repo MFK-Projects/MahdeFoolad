@@ -5,10 +5,13 @@ using NSMangament.Application.Services;
 using Serilog;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 
@@ -22,8 +25,6 @@ namespace MahdeFooladWPF.ViewModels
         private ICommand _retriveDataCommand;
         private ICommand _taskListCommand;
         private readonly IUserMananger _userManager;
-        private static readonly int rnd = new Random().Next(60000, (60000 * 3));
-        private static readonly Timer _retrivedataTimer = new();
         #endregion
 
 
@@ -43,22 +44,25 @@ namespace MahdeFooladWPF.ViewModels
             _userManager = userMananger;
             _logger = logger;
             RegisterEvents();
-
         }
+
 
         private void RegisterEvents()
         {
+            UpdateProggressBarCommand = new UpdateProgressbarCommand(UpdateProgressbar);
             MinimizedCommand = new MinizedWidnowCommand(WindowMinimized);
             _retriveDataCommand = new RetriveDataCommand(GetData);
             _taskListCommand = new TaskListCommand(OpenTaskListWindow);
             CloseCommand = new CloseCommand(WindowClose);
         }
-
         private void OpenTaskListWindow(object paramter)
         {
-            new TasksListView().ShowDialog();
+            var vmModel = new TaskListViewModel(_utilityService);
+            var tasklistwindow = new TasksListView(vmModel);
+
+            tasklistwindow.ShowDialog();
         }
-        private void GetData(object paramter)
+        private void GetData()
         {
             if (FillTaksCollection())
                 MessageBox.Show("عملیات با موفقیت انجام شد");
@@ -85,10 +89,8 @@ namespace MahdeFooladWPF.ViewModels
             var window = paramter as Window;
             window.Close();
         }
-
-        private Task UpdateProgressBar()
+        private void UpdateProgressbar(object paramter)
         {
-            return Task.CompletedTask;
         }
 
 

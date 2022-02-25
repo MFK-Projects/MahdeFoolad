@@ -6,11 +6,11 @@ namespace MahdeFooladWPF.Commands
     public class UpdateProgressbarCommand : ICommand
     {
 
-        private Action _action;
+        private Action<object> _action;
         public event EventHandler CanExecuteChanged;
 
 
-        public UpdateProgressbarCommand(Action action)
+        public UpdateProgressbarCommand(Action<object> action)
         {
             _action = action;
         }
@@ -21,7 +21,7 @@ namespace MahdeFooladWPF.Commands
 
         public void Execute(object parameter)
         {
-            _action?.Invoke();
+            _action?.Invoke(parameter);
         }
     }
 }

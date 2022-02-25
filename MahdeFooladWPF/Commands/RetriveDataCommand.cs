@@ -8,10 +8,10 @@ namespace MahdeFooladWPF.Commands
 {
     public class RetriveDataCommand : ICommand
     {
-        private Action<object> ExcuteCommand;
+        private Action ExcuteCommand;
 
         public event EventHandler CanExecuteChanged;
-        public RetriveDataCommand(Action<object> excute)
+        public RetriveDataCommand(Action excute)
         {
             ExcuteCommand = excute;
         }
@@ -23,9 +23,9 @@ namespace MahdeFooladWPF.Commands
             return true;
         }
 
-        public void Execute(object parameter)
+        public  void Execute(object parameter)
         {
-            ExcuteCommand?.Invoke(null);
+            ExcuteCommand?.Invoke();
         }
     }
 }

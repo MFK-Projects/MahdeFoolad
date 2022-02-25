@@ -71,7 +71,13 @@ namespace MahdeFooladWPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _viewModel.UpdateProggressBarCommand?.Execute(null);
+            this.Dispatcher.Invoke(() =>
+            {
+                _viewModel.UpdateProggressBarCommand?.Execute(progressb);
+            });
+            
+            
+
             _viewModel.RetriveDataCommand?.Execute(null);
         }
     }

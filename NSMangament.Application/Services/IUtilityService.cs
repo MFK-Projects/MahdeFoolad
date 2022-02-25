@@ -8,5 +8,6 @@ namespace NSMangament.Application.Services
     {
         void SetApplicationSetting(ApplicationSettingModel model);
         Task<List<TaskModel>> RetriveData();
+        Task<string> UpdateData(TaskModel model);
     }
 }

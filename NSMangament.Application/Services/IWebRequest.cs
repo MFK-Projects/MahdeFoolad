@@ -10,5 +10,6 @@ namespace NSMangament.Application.Services
     public interface IWebRequest 
     {
         Task<string> DownlaodStringData(DownloadStringModel downlaodModel);
+        Task<string> UploadStringData(UpdteStringModel uploadModel);
     }
 }

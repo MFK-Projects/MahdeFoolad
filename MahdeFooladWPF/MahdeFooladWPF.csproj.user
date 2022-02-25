@@ -12,13 +12,13 @@
     <Compile Update="UserControls\TaskItemUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ChangeStatusWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\TasksListView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\TaskView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -29,13 +29,13 @@
     <Page Update="UserControls\TaskItemUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ChangeStatusWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TasksListView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\TaskView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

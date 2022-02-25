@@ -14,4 +14,9 @@ namespace NSMangament.Application.Models
         public string Url { get; set; }
 
     }
+
+    public class UpdteStringModel:DownloadStringModel
+    {
+        public TaskModel Data { get; set; }
+    }
 }

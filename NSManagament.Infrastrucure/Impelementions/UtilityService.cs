@@ -67,7 +67,7 @@ namespace NSManagament.Infrastrucure.Impelementions
                 UserName = _userManager.User.CredentialName
             });
 
-           // var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
+            // var userdata = JsonConvert.DeserializeObject<RootListModel<UserModel>>(_jsondata);
 
             // Not Compelete Yet
         }
@@ -88,6 +88,21 @@ namespace NSManagament.Infrastrucure.Impelementions
                 return await Task.FromResult(tasksdata.Entities);
             else
                 return await Task.FromResult<List<TaskModel>>(null);
+        }
+
+        public async Task<string> UpdateData(TaskModel model)
+        {
+            var _jsondata = await _webRequest.UploadStringData(new UpdteStringModel
+            {
+                Data = model,
+                DomainName = RequestUrl.DomainName,
+                Password = _userManager.User.Password,
+                UserName = _userManager.User.CredentialName,
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.UpdateTask, null, model.ActivityId, null)
+            });
+
+
+            return await Task.FromResult(_jsondata);
         }
     }
 }
