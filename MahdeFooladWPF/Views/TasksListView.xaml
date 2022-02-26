@@ -67,6 +67,32 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <TextBox 
+                    Text="{Binding Filter,UpdateSourceTrigger=PropertyChanged}"
+                    Grid.Column="2"
+                    Padding="7"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Right"
+                    materialdesign:HintAssist.Hint="جستجو کنید"
+                    materialdesign:HintAssist.IsFloating="True"
+                    />
+
+
+                <ComboBox Grid.Column="1"
+                          x:Name="cmbTaskType"
+                          SelectionChanged="ComboBox_SelectionChanged"
+                          Margin="5"
+                          HorizontalContentAlignment="Right"
+                          VerticalAlignment="Bottom">
+                    <ComboBoxItem IsSelected="True" Content="همه" Tag="0"/>
+                    <ComboBoxItem Content="انجام شده" Tag="1" />
+                    <ComboBoxItem Content="مقضی شده"  Tag="2"/>
+                    <ComboBoxItem Content="درحال انجام" Tag="4" />
+                    <ComboBoxItem Content="نوتیف ها" Tag="3" />
+
+                </ComboBox>
             </Grid>
 
         </Border>
@@ -75,7 +101,7 @@
         <ListBox
             x:Name="taskListBox"
             SelectionChanged="ListBox_SelectionChanged"
-            ItemsSource="{Binding Mode=OneWay}"
+            ItemsSource="{Binding ItemsView,Mode=OneWay}"
             FlowDirection="RightToLeft"
             Background="AliceBlue"
             Grid.Row="2">
@@ -124,6 +150,7 @@
 
         <Border
             x:Name="detailpanel"
+            DataContext="{Binding SingleTask,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
             CornerRadius="10 10 0 0"
              BorderBrush="Gray"
              Height="0"
@@ -229,10 +256,11 @@
                              Grid.Row="3"/>
                     
                     <Button Grid.Column="2" 
+                            x:Name="btnWOpen"
                             Grid.Row="2"
                             Margin="5"
-                            Command="{Binding OpenChangeStatusWindow}"
                             CommandParameter="{Binding ElementName=txtTaskId,Path=Text}"
+                            Command="{Binding OpenChangeStatusWindow}"
                             ToolTip="تغییر وضعیت"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center">
@@ -243,6 +271,31 @@
                                     <Ellipse Fill="#003049"
                                              Width="30" />
                                     <materialdesign:PackIcon Kind="TrackChanges" 
+                                                             VerticalAlignment="Center"
+                                                             HorizontalAlignment="Center"
+                                                             Foreground="White"/>
+                                </Grid>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Grid.Column="2" 
+                            x:Name="btnBopen"
+                            Grid.Row="2"
+                            Margin="5"
+                            CommandParameter="{Binding ElementName=txtTaskId,Path=Text}"
+                            Command="{Binding OpenTaskInChromeCommand}"
+                            ToolTip="نمایش در crm"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                        <Button.Template>
+                            <ControlTemplate>
+
+                                <Grid>
+                                    <Ellipse Fill="#96d406"
+                                             Width="30" />
+                                    <materialdesign:PackIcon Kind="Link" 
                                                              VerticalAlignment="Center"
                                                              HorizontalAlignment="Center"
                                                              Foreground="White"/>

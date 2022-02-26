@@ -19,15 +19,16 @@
                 Margin="0 10 0 20"/>
             <ComboBox 
                 Margin="5 0 5 30"
-                Name="cmbStatus"
-                SelectionChanged="ComboBox_SelectionChanged">
+                Name="cmbStatus">
                 <ComboBoxItem Tag="100000001" Content="دیده شده"/>
                 <ComboBoxItem Tag="100000002" Content="درحال انجام"/>
-                <ComboBoxItem Tag="100000,003" Content="انجام شده"/>
+                <ComboBoxItem Tag="100000003" Content="انجام شده"/>
                 <ComboBoxItem Tag="100000005" Content="تایید نهایی"/>
             </ComboBox>
 
             <Button 
+                Command="{Binding ChangeStatusCommand}"
+                CommandParameter="{Binding ElementName=cmbStatus,Path=SelectedItem}"
                 Background="#61a5c2"
                 BorderBrush="#61a5c2"
                 Margin="5">
@@ -43,7 +44,7 @@
 
 
             <Button 
-                Command="{Binding CloseCommand}"
+                Command="{Binding ClosedCommand}"
                 CommandParameter="{Binding ElementName=_this}"
                 Background="DarkRed"
                 BorderBrush="DarkRed"

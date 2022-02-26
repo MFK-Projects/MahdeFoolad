@@ -26,30 +26,8 @@ namespace MahdeFooladWPF.Views
         {
             InitializeComponent();
             _vmModel = vmModel;
-            this.Width = 0;
-            this.Height = 0;
-            AnimateWindow();
+            this.DataContext = _vmModel;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var item = cmbStatus.SelectedItem as ComboBoxItem;
-            _vmModel?.ChangeStatusCommand.Execute(item.Tag);
-        }
-
-        private void AnimateWindow()
-        {
-            DoubleAnimation animey = new (220, TimeSpan.FromMilliseconds(600));
-            DoubleAnimation animex = new (200, TimeSpan.FromSeconds(1));
-            CircleEase easing = new();
-            
-            easing.EasingMode = EasingMode.EaseIn;
-
-            animey.EasingFunction = easing;
-            animex.EasingFunction = easing;
-            this.BeginAnimation(Window.WidthProperty, animex);
-            this.BeginAnimation(Window.HeightProperty, animey);
-
-        }
     }
 }

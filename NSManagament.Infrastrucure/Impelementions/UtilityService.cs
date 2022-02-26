@@ -14,7 +14,6 @@ namespace NSManagament.Infrastrucure.Impelementions
 {
     public class UtilityService : IUtilityService
     {
-        private static List<TaskModel> _tasks;
         private readonly static object _lokcer = new();
         private static readonly string _settitngFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\appSetting.json";
         private readonly ILogger _logger;
@@ -92,13 +91,28 @@ namespace NSManagament.Infrastrucure.Impelementions
 
         public async Task<string> UpdateData(TaskModel model)
         {
-            var _jsondata = await _webRequest.UploadStringData(new UpdteStringModel
+            var _jsondata = await _webRequest.UploadStringData(new UpdteTaskModel
             {
                 Data = model,
                 DomainName = RequestUrl.DomainName,
                 Password = _userManager.User.Password,
                 UserName = _userManager.User.CredentialName,
-                Url = RequestUrl.BuildUrl(UrlBuilderMode.UpdateTask, null, model.ActivityId, null)
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.UpdateTask, null, model.ActivityId,null)
+            });
+
+
+            return await Task.FromResult(_jsondata);
+        }
+
+        public async Task<string> UpdateData(string taskStatus,string taskId)
+        {
+            var _jsondata = await _webRequest.UploadStringData(new UpdateStringModel
+            {
+                Data = taskStatus,
+                DomainName = RequestUrl.DomainName,
+                Password = _userManager.User.Password,
+                UserName = _userManager.User.CredentialName,
+                Url = RequestUrl.BuildUrl(UrlBuilderMode.UpdateTask, null, taskId, null)
             });
 
 

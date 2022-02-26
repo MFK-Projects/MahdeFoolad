@@ -15,8 +15,15 @@ namespace NSMangament.Application.Models
 
     }
 
-    public class UpdteStringModel:DownloadStringModel
+    public class UpdteTaskModel:DownloadStringModel
+        
     {
         public TaskModel Data { get; set; }
+    }
+
+
+    public class UpdateStringModel : DownloadStringModel
+    {
+        public string Data { get; set; }
     }
 }

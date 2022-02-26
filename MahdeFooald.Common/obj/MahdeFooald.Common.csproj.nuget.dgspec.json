@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {}
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {}
   },
   "projects": {
-    "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
+    "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
         "projectName": "MahdeFooald.Common",
-        "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
-        "packagesPath": "C:\\Users\\r.khaleghi\\.nuget\\packages\\",
-        "outputPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\obj\\",
+        "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
+        "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\r.khaleghi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

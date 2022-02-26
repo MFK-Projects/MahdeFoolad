@@ -9,5 +9,7 @@ namespace NSMangament.Application.Services
         void SetApplicationSetting(ApplicationSettingModel model);
         Task<List<TaskModel>> RetriveData();
         Task<string> UpdateData(TaskModel model);
+        Task<string> UpdateData(string taskStatus , string taskId);
+
     }
 }

@@ -1039,19 +1039,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\r.khaleghi\\.nuget\\packages\\": {}
+    "C:\\Users\\Amir_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+      "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
       "projectName": "NSManagament.Infrastrucure",
-      "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
-      "packagesPath": "C:\\Users\\r.khaleghi\\.nuget\\packages\\",
-      "outputPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSManagament.Infrastrucure\\obj\\",
+      "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj",
+      "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\r.khaleghi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1065,11 +1065,11 @@
         "net5.0-windows10.0.17763": {
           "targetAlias": "net5.0-windows10.0.17763.0",
           "projectReferences": {
-            "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
-              "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj"
+            "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj": {
+              "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj"
             },
-            "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
-              "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj"
+            "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj": {
+              "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSMangament.Application\\NSMangament.Application.csproj"
             }
           }
         }

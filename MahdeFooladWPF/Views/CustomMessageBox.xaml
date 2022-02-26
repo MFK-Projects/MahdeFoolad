@@ -1,0 +1,60 @@
+﻿<Window x:Class="MahdeFooladWPF.Views.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MahdeFooladWPF.Views" 
+        xmlns:materialDesgin="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowState="Normal"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        Opacity="1"
+        Title="CustomMessageBox" Height="220" Width="350">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Duration="0:0:0.5"
+                        To="1"
+                        From="0"
+                        Storyboard.TargetProperty="Opacity"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <StackPanel Background="#e8f7f4">
+        <TextBlock x:Name="txtMessage"
+                   Padding="10"
+                   HorizontalAlignment="Center"
+                   Foreground="Gray"
+                   TextWrapping="Wrap"
+                   Margin="5 10 0 0"/>
+        <Label HorizontalAlignment="Center">
+            <Grid>
+                <Ellipse Width="100"
+                         x:Name="xbackground"
+                         HorizontalAlignment="Center"
+                         Fill="#34e065"
+                         VerticalAlignment="Center"
+                         Height="100"/>
+                <materialDesgin:PackIcon Kind="Done"
+                                         x:Name="xIocn"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Width="80"
+                                         Foreground="White"
+                                         Height="80"/>
+            </Grid>
+        </Label>
+
+        <Button  Margin="10" Background="#5ab5d1"
+                 x:Name="xbtn"
+                 Click="Button_Click"
+                 HorizontalAlignment="Center"
+                     BorderBrush="Transparent"
+                     Content="کلیک کنید"/>
+    </StackPanel>
+</Window>

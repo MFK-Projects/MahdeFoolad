@@ -1,28 +1,46 @@
 ﻿using MahdeFooladWPF.Commands;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+using MahdeFooladWPF.ModelConverters;
+using MahdeFooladWPF.Views;
+using NSMangament.Application.Services;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MahdeFooladWPF.ViewModels
 {
     public class ChangeStatusViewModel : BaseViewModel
     {
-
+        private TaskModelConverter _task;
+        private readonly IUtilityService _utilityService;
         public ICommand ChangeStatusCommand { get; set; }
-        public ICommand ClsoeCommand { get; set; }
-        public ChangeStatusViewModel()
+        public ICommand ClosedCommand { get; set; }
+        public ChangeStatusViewModel(IUtilityService utilityService, TaskModelConverter task)
         {
-            ClsoeCommand = new CloseCommand(CloseWindow);
-            ChangeStatusCommand = new ChangeStatusCommand(ChangeTaskStatus);
+            RegisterCommands();
+            _utilityService = utilityService;
+            _task = task;
         }
 
-
+        private void RegisterCommands()
+        {
+            ChangeStatusCommand = new ChangeStatusCommand(ChangeTaskStatus);
+            ClosedCommand = new CloseCommand(CloseWindow);
+        }
 
         private void ChangeTaskStatus(object paramter)
         {
-            int data = (int)paramter;
+            if (paramter == null)
+                MessageBox.Show("باید یک وضعیت جدید انتحا کنید");
+            else
+            {
+                var value = (paramter as ComboBoxItem).Tag.ToString();
+                var result = _utilityService.UpdateData(value, _task.TaskId);
+
+                CustomMessageBox.ShowMessage("عملیات باموفقیت انجام شد", IconImage.Success,null);
+                
+            }
+
         }
         private void CloseWindow(object paramter)
         {

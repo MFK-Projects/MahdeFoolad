@@ -25,10 +25,11 @@ namespace MahdeFooladWPF.Views
         private readonly TaskListViewModel _vmModel;
         public TasksListView(TaskListViewModel vmModel)
         {
-            InitializeComponent();
             _vmModel = vmModel;
+            InitializeComponent();
             this.DataContext = _vmModel;
-     
+            btnBopen.DataContext = _vmModel;
+            btnWOpen.DataContext = _vmModel;
         }
 
         private void TaskListWindow_Loaded(object sender, RoutedEventArgs e)
@@ -41,11 +42,18 @@ namespace MahdeFooladWPF.Views
 
             _vmModel.DetailConverter.Invoke(taskListBox.SelectedItem as TaskModelConverter);
             detailpanel.DataContext = _vmModel.SingleTask;
-
             CircleEase easing = new CircleEase();
             easing.EasingMode = EasingMode.EaseOut;
-            DoubleAnimation anim = new DoubleAnimation(280, new Duration(TimeSpan.FromMilliseconds(400)));
+            DoubleAnimation anim = new DoubleAnimation(300, new Duration(TimeSpan.FromMilliseconds(400)));
             detailpanel.BeginAnimation(Border.HeightProperty, anim);
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var tag = (cmbTaskType.SelectedItem as ComboBoxItem)?.Tag ?? "0";
+            
+            _vmModel.TaskTypeChange = tag.ToString();
+
         }
     }
 }

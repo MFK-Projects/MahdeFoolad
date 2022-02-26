@@ -33,3 +33,4 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\Mahde
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
