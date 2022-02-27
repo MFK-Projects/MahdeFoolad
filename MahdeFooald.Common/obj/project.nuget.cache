@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rs4OtLoxJYFG3vN8Iba7poAsL6ieA5fu7SnhtzMe4UxovmPC1HSCF95EYP3JnmZdmHMgo5ufwgTtmAjW4lZdeg==",
+  "dgSpecHash": "XeJXZ8/vJWnqSwvAKEjfD4IgXDpiihDv4c2vKeKeh4bkvYMsHj8aUUTdWsYwESnMB4zlE4aO914Omdae3+OKgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
+  "projectFilePath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooald.Common\\MahdeFooald.Common.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Amir_\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\a.moradi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

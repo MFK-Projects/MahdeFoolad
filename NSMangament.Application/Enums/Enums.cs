@@ -20,8 +20,10 @@ namespace NSMangament.Application.Enums
         Expired,
         Assigned
     }
-    public enum TaskType
+
+    public enum TaskListType
     {
-       
+        NotifyList,
+        WholeList
     }
 }

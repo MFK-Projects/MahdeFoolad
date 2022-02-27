@@ -26,7 +26,7 @@ namespace MahdeFooladWPF.Views
 
         private void LoginWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            DoubleAnimation animation = new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(2)));
+            DoubleAnimation animation = new (0, new Duration(TimeSpan.FromSeconds(2)));
             this.BeginAnimation(Window.OpacityProperty, animation);
         }
 

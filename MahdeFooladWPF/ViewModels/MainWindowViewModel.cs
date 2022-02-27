@@ -32,6 +32,7 @@ namespace MahdeFooladWPF.ViewModels
         public ICommand MinimizedCommand { get; set; }
         public ICommand UpdateProggressBarCommand { get; set; }
         public ICommand RetriveDataCommand { get; set; }
+        public ICommand OpenNotificationTaskWindow { get; set; }
         public ICommand RestDataCommand => _retriveDataCommand;
         public ICommand TaskListCommand => _taskListCommand;
 
@@ -54,10 +55,11 @@ namespace MahdeFooladWPF.ViewModels
             _retriveDataCommand = new RetriveDataCommand(GetData);
             _taskListCommand = new TaskListCommand(OpenTaskListWindow);
             CloseCommand = new CloseCommand(WindowClose);
+            OpenNotificationTaskWindow = new OpenWindowCommand(OpenNotiyWindow);
         }
         private void OpenTaskListWindow(object paramter)
         {
-            var vmModel = new TaskListViewModel(_utilityService);
+            var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.WholeList);
             var tasklistwindow = new TasksListView(vmModel);
 
             tasklistwindow.ShowDialog();
@@ -91,6 +93,12 @@ namespace MahdeFooladWPF.ViewModels
         }
         private void UpdateProgressbar(object paramter)
         {
+        }
+        private void OpenNotiyWindow(object paramter)
+        {
+            var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.NotifyList);
+            var taskWindow = new TasksListView(vmModel);
+            taskWindow.ShowDialog();
         }
 
 

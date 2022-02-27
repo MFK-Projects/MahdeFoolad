@@ -18,7 +18,7 @@ namespace NSManagament.Infrastrucure.Services
         {
             foreach (var task in tasks)
             {
-                if ((task.RemainingDay < 5 && task.RemainingDay > 0) && task.PriorityCode == 2)
+                if (task.PriorityCode == 2 && task.RemainingDay > 0 && task.RemainingDay < 5)
                 {
                     _tasks.Add(task);
                     continue;

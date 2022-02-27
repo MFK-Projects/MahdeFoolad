@@ -2,6 +2,8 @@
 using MahdeFooladWPF.Commands;
 using MahdeFooladWPF.ModelConverters;
 using MahdeFooladWPF.Views;
+using NSManagament.Infrastrucure.Services;
+using NSMangament.Application.Enums;
 using NSMangament.Application.Models;
 using NSMangament.Application.Services;
 using System;
@@ -22,6 +24,7 @@ namespace MahdeFooladWPF.ViewModels
         private static TaskModelConverter _taskdetails = new();
         private readonly IUtilityService _utilityService;
         private string filter = string.Empty;
+        private TaskListType _lstType;
         private string tsakTypeChange;
         public string TaskType { get; set; }
         public string TaskTypeChange
@@ -80,9 +83,10 @@ namespace MahdeFooladWPF.ViewModels
         #endregion
 
 
-        public TaskListViewModel(IUtilityService utilityService)
+        public TaskListViewModel(IUtilityService utilityService,TaskListType lsttype)
         {
             TaskCollection = new();
+            _lstType = lsttype;
             _utilityService = utilityService;
             RegisterCommands();
 
@@ -96,22 +100,28 @@ namespace MahdeFooladWPF.ViewModels
             OpenChangeStatusWindow = new OpenWindowCommand(OpenChangeTaskWindow);
             OpenTaskInChromeCommand = new OpenInBrowserCommand(OpenChrome);
         }
-
         private void OpenChangeTaskWindow(object paramter)
         {
             var vmModel = new ChangeStatusViewModel(_utilityService, SingleTask);
             ChangeStatusWindow window = new ChangeStatusWindow(vmModel);
             window.ShowDialog();
         }
-
-
         private void ShowDetail(TaskModelConverter model)
         {
             _taskdetails = model;
         }
         private void GetAllData()
         {
-            var lst = _utilityService.RetriveData().Result;
+            List<TaskModel> lst;
+
+            if (_lstType == TaskListType.NotifyList)
+            {
+                FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
+                
+                lst = FilterNotifyTaskService.NotifyTasks;
+            }
+            else
+                lst = _utilityService.RetriveData().Result;
 
             foreach (var item in lst)
             {
@@ -132,10 +142,15 @@ namespace MahdeFooladWPF.ViewModels
         private static void TaskCoditions(TaskModel item, TaskModelConverter task)
         {
 
-            if (item.Description.Length > 40)
-                task.MiniDescription = item.Description.Substring(0, 40) + "...";
+            if (!string.IsNullOrEmpty(item.Description))
+            {
+                if (item.Description.Length > 40)
+                    task.MiniDescription = item.Description.Substring(0, 40) + "...";
+                else
+                    task.MiniDescription = item.Description;
+            }
             else
-                task.MiniDescription = item.Description;
+                task.MiniDescription = "توضیحاتی ندارد";
 
             if (item.PriorityCode == 0)
                 task.Prioroty = "کم";
@@ -150,6 +165,7 @@ namespace MahdeFooladWPF.ViewModels
         }
         private void Close(object paramter)
         {
+            TaskCollection.Clear();
             var curentWindow = paramter as Window;
             curentWindow.Close();
         }

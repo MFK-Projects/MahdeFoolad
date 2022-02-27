@@ -153,7 +153,7 @@
                 Name="navbar"
                 Background="#dee2e6"
                 CornerRadius="10 0 0 10"
-                Grid.RowSpan="3" Width="0">
+                Grid.RowSpan="3" Width="220">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="4"
                                   Opacity="0.8"
@@ -162,69 +162,84 @@
                                   Color="Gray" />
             </Border.Effect>
             <StackPanel>
-                <Button Background="Transparent"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Background="Transparent"
                         Foreground="DarkRed"
                         Name="MenuCloseBtn"
                         BorderBrush="Transparent"
                         Margin="5" HorizontalAlignment="Left">
 
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Border Cursor="Hand"
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border Cursor="Hand"
                                     Background="Transparent"
                                     Padding="5"
                                     VerticalAlignment="Center">
-                                <materialDesign:PackIcon Kind="Close"/>
-                                <Border.Style>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Trigger.EnterActions>
-                                                    <BeginStoryboard>
-                                                        <Storyboard>
-                                                            <ColorAnimation 
+                                    <materialDesign:PackIcon Kind="Close"/>
+                                    <Border.Style>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Trigger.EnterActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ColorAnimation 
                                                                      To="DarkOrange"
                                                                      Duration="0:0:0.3"
                                                                       Storyboard.TargetProperty="Background.Color"  />
-                                                        </Storyboard>
-                                                    </BeginStoryboard>
-                                                </Trigger.EnterActions>
-                                                <Trigger.ExitActions>
-                                                    <BeginStoryboard>
-                                                        <Storyboard>
-                                                            <ColorAnimation 
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.EnterActions>
+                                                    <Trigger.ExitActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ColorAnimation 
                                                                      To="Transparent"
                                                                      Duration="0:0:0.3"
                                                                       Storyboard.TargetProperty="Background.Color"  />
-                                                        </Storyboard>
-                                                    </BeginStoryboard>
-                                                </Trigger.ExitActions>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.ExitActions>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
 
-                    <Button.Triggers>
-                        <EventTrigger RoutedEvent="Button.Click">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation 
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
                                         Storyboard.TargetName="navbar"
                                         Storyboard.TargetProperty="Width"
                                         To="0"
                                         Duration="0:0:0.4">
-                                        <DoubleAnimation.EasingFunction>
-                                            <SineEase EasingMode="EaseIn"/>
-                                        </DoubleAnimation.EasingFunction>
-                                    </DoubleAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Button.Triggers>
-                </Button>
+                                            <DoubleAnimation.EasingFunction>
+                                                <SineEase EasingMode="EaseIn"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <Button  Content="{materialDesign:PackIcon Kind=Settings}"
+                             Foreground="Purple"
+                             Background="Transparent"
+                             BorderBrush="Transparent"
+                             Grid.Column="1"
+                             Margin="3"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Right"/>
+                </Grid>
                 <TextBlock 
                         Text="{Binding FullName,Mode=OneWay}" 
                        HorizontalAlignment="Center"
@@ -262,17 +277,17 @@
                 <Button
                     Foreground="Black"
                     Margin="5 6"
+                    Command="{Binding OpenNotificationTaskWindow}"
                     HorizontalContentAlignment="Right">
-
                     <Button.Template>
                         <ControlTemplate>
                             <Border 
-                                  Background="Transparent"
+                                Background="Transparent"
                                 CornerRadius="5"
                                 Style="{StaticResource navbarButton }">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
                                             VerticalAlignment="Center">
-                                    <TextBlock Text="reminder" />
+                                    <TextBlock Text="لیست نوتیف ها" />
                                 </StackPanel>
                             </Border>
                         </ControlTemplate>
@@ -293,7 +308,7 @@
                                 Style="{StaticResource navbarButton }">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
                                             VerticalAlignment="Center">
-                                    <TextBlock Text="بروز رسانی اطلاعات" />
+                                    <TextBlock Text="به روز رسانی تسک ها" />
 
                                 </StackPanel>
                             </Border>
