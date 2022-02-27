@@ -15,7 +15,38 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="vazirFont">
+
+            <Style x:Key="navbarButton" TargetType="Border">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True" >
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation 
+                                        To="White"
+                                        Duration="0:0:0.4"
+                                        Storyboard.TargetProperty="Background.Color"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+
+                        <Trigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation 
+                                        To="White"
+                                        Duration="0:0:0.4"
+                                        Storyboard.TargetProperty="Background.Color"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.ExitActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            
+            <Style  x:Key="vazirFont">
                 <Setter Property="TextElement.FontFamily"
                         Value="Fonts/#Vazir"/>
             </Style>

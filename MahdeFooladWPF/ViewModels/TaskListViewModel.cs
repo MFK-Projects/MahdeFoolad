@@ -62,7 +62,7 @@ namespace MahdeFooladWPF.ViewModels
                 {
                     filter = value;
                     ItemsView.Refresh();
-                    OnPropertyChaned("Filter");
+                    OnPropertyChaned(nameof(Filter));
                     ItemsView.Filter = FilterItems;
                     ItemsView.Refresh();
                 }
@@ -92,7 +92,7 @@ namespace MahdeFooladWPF.ViewModels
 
         }
 
-        private void RegisterCommands()
+         private void RegisterCommands()
         {
             CloseCommand = new CloseCommand(Close);
             RetriveDataCommand = new RetriveDataCommand(GetAllData);
@@ -103,7 +103,7 @@ namespace MahdeFooladWPF.ViewModels
         private void OpenChangeTaskWindow(object paramter)
         {
             var vmModel = new ChangeStatusViewModel(_utilityService, SingleTask);
-            ChangeStatusWindow window = new ChangeStatusWindow(vmModel);
+            ChangeStatusWindow window = new (vmModel);
             window.ShowDialog();
         }
         private void ShowDetail(TaskModelConverter model)
@@ -145,7 +145,7 @@ namespace MahdeFooladWPF.ViewModels
             if (!string.IsNullOrEmpty(item.Description))
             {
                 if (item.Description.Length > 40)
-                    task.MiniDescription = item.Description.Substring(0, 40) + "...";
+                    task.MiniDescription = item.Description.Substring(0,40) + "...";
                 else
                     task.MiniDescription = item.Description;
             }

@@ -39,30 +39,26 @@ namespace MahdeFooladWPF
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 
-            ////var _userService = _serviceProvider.GetService<IUserMananger>();
-            ////var _uilityService = _serviceProvider.GetService<IUtilityService>();
-            ////_mainViewModel = new MainWindowViewModel(_logger,_uilityService,_userService);
+            var _userservice = _serviceProvider.GetService<IUserMananger>();
+            var _uilityservice = _serviceProvider.GetService<IUtilityService>();
+            _mainViewModel = new (_logger, _uilityservice, _userservice);
 
-            ////if (string.IsNullOrEmpty(_userService.User.Password))
-            ////{
-            ////    login = new(new UserLoginViewModel(_logger, _userService));
-            ////    login.ShowDialog();
+            if (string.IsNullOrEmpty(_userservice.User.Password))
+            {
+                login = new(new UserLoginViewModel(_logger, _userservice));
+                login.ShowDialog();
 
-            ////    if (login.IsClosed)
-            ////        return;
+                if (login.IsClosed)
+                    return;
 
-            ////    mainWindow = new(_mainViewModel);
-            ////    mainWindow.ShowDialog();
-            ////}
-            ////else
-            ////{
-            ////    mainWindow = new(_mainViewModel);
-            ////    mainWindow.ShowDialog();
-            ////}
-            ///
-
-
-            new SettingWindow().ShowDialog();
+                mainWindow = new(_mainViewModel);
+                mainWindow.ShowDialog();
+            }
+            else
+            {
+                mainWindow = new(_mainViewModel);
+                mainWindow.ShowDialog();
+            }
         }
     }
 }

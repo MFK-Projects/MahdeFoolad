@@ -10,7 +10,7 @@ namespace NSManagament.Infrastrucure.Services
     public static class FilterNotifyTaskService
     {
 
-        private readonly static List<TaskModel> _tasks = new List<TaskModel>();
+        private readonly static List<TaskModel> _tasks = new ();
         public  static List<TaskModel> NotifyTasks { get => _tasks; }
 
 

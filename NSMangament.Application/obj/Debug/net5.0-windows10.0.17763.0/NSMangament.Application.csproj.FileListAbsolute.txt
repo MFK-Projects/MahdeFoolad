@@ -21,6 +21,7 @@ C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\ob
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.dll
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\ref\NSMangament.Application.dll
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.pdb
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.csproj.AssemblyReference.cache
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.deps.json
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\bin\Debug\net5.0-windows10.0.17763.0\ref\NSMangament.Application.dll
@@ -33,4 +34,3 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\ref\NSMangament.Application.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.pdb
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\NSMangament.Application\obj\Debug\net5.0-windows10.0.17763.0\NSMangament.Application.csproj.AssemblyReference.cache

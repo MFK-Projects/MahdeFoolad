@@ -83,14 +83,13 @@
                 <ComboBox Grid.Column="1"
                           x:Name="cmbTaskType"
                           SelectionChanged="ComboBox_SelectionChanged"
-                          Margin="5"
+                          Margin="7"
                           HorizontalContentAlignment="Right"
                           VerticalAlignment="Bottom">
                     <ComboBoxItem IsSelected="True" Content="همه" Tag="0"/>
                     <ComboBoxItem Content="انجام شده" Tag="1" />
                     <ComboBoxItem Content="مقضی شده"  Tag="2"/>
                     <ComboBoxItem Content="درحال انجام" Tag="4" />
-                    <ComboBoxItem Content="نوتیف ها" Tag="3" />
 
                 </ComboBox>
             </Grid>
@@ -99,6 +98,7 @@
 
 
         <ListBox
+            Style="{StaticResource vazirFont}"
             x:Name="taskListBox"
             SelectionChanged="ListBox_SelectionChanged"
             ItemsSource="{Binding ItemsView,Mode=OneWay}"
@@ -118,11 +118,13 @@
                             </Rectangle>
                             <StackPanel>
                                 <TextBlock  Text="{Binding Subject}"
+                                            Style="{StaticResource vazirFont}"
                                             x:Name="txbsubject"       
                                             TextWrapping="Wrap"
                                             Padding="6"
                                             Foreground="DarkGray"/>
                                 <TextBlock Margin="5"
+                                           Style="{StaticResource vazirFont}"
                                            x:Name="txbdiscription"
                            Text="{Binding MiniDescription}"
                            MaxWidth="280"
@@ -131,11 +133,13 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding RemainingDays,StringFormat=تاریخ {0}}"
                                      Padding="5"
+                                     Style="{StaticResource vazirFont}"
                                      Margin="5"
                                     Foreground="Gray"/>
                                     
                                     <TextBlock  Text="{Binding RemainginHour,StringFormat=زمان انجام : {0}}" 
                                      VerticalAlignment="Center"
+                                     Style="{StaticResource vazirFont}"
                                     Foreground="Gray"
                                     Margin="5"/>
                                 </StackPanel>

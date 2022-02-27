@@ -250,6 +250,8 @@
                        FontWeight="SemiBold"
                        FlowDirection="RightToLeft"/>
 
+
+
                 <Button
                     Name="OpTasksWidnowBtn"
                     Command="{Binding TaskListCommand}"
@@ -260,7 +262,7 @@
                     <Button.Template>
                         <ControlTemplate>
                             <Border 
-                                   Background="Transparent"
+                                Background="Transparent"
                                 CornerRadius="5"
                                 Style="{StaticResource navbarButton }">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
@@ -337,6 +339,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+
             </StackPanel>
         </Border>
 
