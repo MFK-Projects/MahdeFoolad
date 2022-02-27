@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MahdeFooladWPF.Views"
         xmlns:vm="clr-namespace:MahdeFooladWPF.ViewModels"
+        xmlns:tb="http://www.hardcodet.net/taskbar" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        x:Name="mainwindow"
         ResizeMode="NoResize"
         WindowStyle="None" 
         Title="MainWindow" Height="260" Width="600">
     <Grid>
+
+
+
         <Grid.Background>
             <LinearGradientBrush >
                 <GradientStop  Color="#dee2e6" Offset="0"/>
@@ -25,6 +30,8 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
+
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -35,6 +42,8 @@
                 MouseDown="TopStackPanel_MouseDowned"
                 VerticalAlignment="Center">
                 <Button 
+                    Command="{Binding MinimizedCommand}"
+                    CommandParameter="{Binding ElementName=mainwindow}"
                     Name="btnClose"
                     Content="{materialDesign:PackIcon Kind=Close}"
                     Foreground="DarkRed"
@@ -153,7 +162,7 @@
                 Name="navbar"
                 Background="#dee2e6"
                 CornerRadius="10 0 0 10"
-                Grid.RowSpan="3" Width="220">
+                Grid.RowSpan="3" Width="0">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="4"
                                   Opacity="0.8"
@@ -268,6 +277,9 @@
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
                                             VerticalAlignment="Center">
                                     <TextBlock Text="لیست وظایف" />
+                                    <materialDesign:PackIcon Kind="ListStatus"
+                                                             VerticalAlignment="Bottom"
+                                                             Margin="10 0 0 0"/>
                                 </StackPanel>
                             </Border>
                         </ControlTemplate>
@@ -290,6 +302,10 @@
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
                                             VerticalAlignment="Center">
                                     <TextBlock Text="لیست نوتیف ها" />
+                                    <materialDesign:PackIcon Kind="NotificationsActive"
+                                                             Foreground="#ab87ff"
+                                                                 VerticalAlignment="Bottom"
+                                                                   Margin="10 0 0 0"/>
                                 </StackPanel>
                             </Border>
                         </ControlTemplate>
@@ -311,37 +327,32 @@
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
                                             VerticalAlignment="Center">
                                     <TextBlock Text="به روز رسانی تسک ها" />
-
+                                    <materialDesign:PackIcon Kind="Refresh"
+                                                               VerticalAlignment="Bottom"
+                                                             Foreground="#a89f68"
+                                                             Margin="10 0 0 0"/>
                                 </StackPanel>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
-
-                <Button
-                    Foreground="Black"
-                    Margin="5 6"
-                    HorizontalContentAlignment="Right">
-
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Border 
-                                Background="Transparent"
-                                CornerRadius="5"
-                                Style="{StaticResource navbarButton }">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
-                                            VerticalAlignment="Center">
-                                    <TextBlock Text="تنظیمات کارخانه" />
-
-                                </StackPanel>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
             </StackPanel>
         </Border>
 
+
+        <tb:TaskbarIcon   
+            x:Name="systemTray"
+            IconSource="Images/Mahde_Foolad_Circle.ico"
+            MenuActivation="LeftOrRightClick"
+            ToolTipText="مهد فولاد نوتیفیکشن">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="بستن نرم افزار" Click="CloseCommand"/>
+                    <MenuItem Header="باز کردن نرم افزار" Click="NormlizedCommand"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+
     </Grid>
+    
 </Window>

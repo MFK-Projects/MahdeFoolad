@@ -33,6 +33,7 @@ namespace MahdeFooladWPF
         {
             InitializeComponent();
             this.DataContext = _viewModel = viewModel;
+            systemTray.DataContext = _viewModel;
         }
 
         private void ToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -79,6 +80,19 @@ namespace MahdeFooladWPF
             
 
             _viewModel.RetriveDataCommand?.Execute(null);
+        }
+
+        private void CloseCommand(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+        private void NormlizedCommand(object sender,RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+            this.Visibility = Visibility.Visible;
+            this.Activate();
         }
     }
 }

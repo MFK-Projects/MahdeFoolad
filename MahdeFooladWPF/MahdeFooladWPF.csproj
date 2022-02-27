@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Images\Mahde_Foolad_Circle.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="Fonts\" />
 	</ItemGroup>
 
@@ -15,9 +19,13 @@
 		<Resource Include="Fonts\Vazir.ttf" />
 		<Resource Include="Fonts\Vazir-Bold.ttf" />
 		<Resource Include="Fonts\Vazir-Light.ttf" />
+		<Resource Include="Images\Mahde_Foolad_Circle.ico">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
 	</ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Serilog" Version="2.10.0" />

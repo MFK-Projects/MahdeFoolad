@@ -10,7 +10,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         Opacity="1"
-        Title="CustomMessageBox" Height="220" Width="350">
+        Title="CustomMessageBox" Height="200" Width="300">
     <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">
             <BeginStoryboard>
@@ -34,12 +34,13 @@
                    Margin="5 10 0 0"/>
         <Label HorizontalAlignment="Center">
             <Grid>
-                <Ellipse Width="100"
+                <Ellipse Width="80"
                          x:Name="xbackground"
                          HorizontalAlignment="Center"
                          Fill="#34e065"
+                         Margin="0 0 0 0"
                          VerticalAlignment="Center"
-                         Height="100"/>
+                         Height="80"/>
                 <materialDesgin:PackIcon Kind="Done"
                                          x:Name="xIocn"
                                          HorizontalAlignment="Center"
@@ -50,11 +51,11 @@
             </Grid>
         </Label>
 
-        <Button  Margin="10" Background="#5ab5d1"
-                 x:Name="xbtn"
-                 Click="Button_Click"
-                 HorizontalAlignment="Center"
-                     BorderBrush="Transparent"
-                     Content="کلیک کنید"/>
+        <StackPanel Orientation="Horizontal"
+                    Margin="0 15 0 0"
+                    x:Name="stackpanelBtns">
+
+        </StackPanel>
+
     </StackPanel>
 </Window>

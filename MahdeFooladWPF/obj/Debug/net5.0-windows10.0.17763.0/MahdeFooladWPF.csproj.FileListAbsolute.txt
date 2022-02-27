@@ -112,3 +112,6 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\ref\MahdeFooladWPF.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\MahdeFooladWPF.pdb
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\MahdeFooladWPF.genruntimeconfig.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\SettingWindow.g.cs
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\obj\Debug\net5.0-windows10.0.17763.0\Views\SettingWindow.baml
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\bin\Debug\net5.0-windows10.0.17763.0\Hardcodet.NotifyIcon.Wpf.dll

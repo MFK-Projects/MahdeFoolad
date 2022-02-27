@@ -76,12 +76,13 @@ namespace NSManagament.Infrastrucure.Impelementions
                     throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(uploadModel)}");
                 }
 
-                _client.Credentials = new NetworkCredential(
-                    uploadModel.UserName,
-                    uploadModel.Password,
-                    uploadModel.DomainName
-                    );
+                //_client.Credentials = new NetworkCredential(
+                //    uploadModel.UserName,
+                //    uploadModel.Password,
+                //    uploadModel.DomainName
+                //    );
 
+                _client.Credentials = new NetworkCredential("a.moradi", "r", "KIAN");
 
                 _client.Headers.Add("OData-Version", "4.0");
                 _client.Headers.Add("Accept", "application/json");
@@ -118,12 +119,14 @@ namespace NSManagament.Infrastrucure.Impelementions
                     throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(uploadModel)}");
                 }
 
-                _client.Credentials = new NetworkCredential(
-                    uploadModel.UserName,
-                    uploadModel.Password,
-                    uploadModel.DomainName
-                    );
+                //_client.Credentials = new NetworkCredential(
+                //    uploadModel.UserName,
+                //    uploadModel.Password,
+                //    uploadModel.DomainName
+                //    );
 
+
+                _client.Credentials = new NetworkCredential("a.moradi", "r", "KIAN");
 
                 _client.Headers.Add("OData-Version", "4.0");
                 _client.Headers.Add("Accept", "application/json");

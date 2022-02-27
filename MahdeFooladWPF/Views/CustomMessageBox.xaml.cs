@@ -20,15 +20,15 @@ namespace MahdeFooladWPF.Views
     public partial class CustomMessageBox : Window
     {
 
-        private static CustomDialogBoxResult Result;
-        public CustomMessageBox(string content ,IconImage icon,Window owner)
+        private static CustomMessageboxResult Result = CustomMessageboxResult.No;
+        public CustomMessageBox(string content, IconImage? icon, Window owner)
         {
-           
+
             InitializeComponent();
-            InitlaElements(content, icon,owner);
+            InitlaElements(content, icon, owner);
         }
 
-        private void InitlaElements(string content, IconImage icon,Window owner)
+        private void InitlaElements(string content, IconImage? icon, Window owner)
         {
             if (owner == null)
                 this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -58,29 +58,116 @@ namespace MahdeFooladWPF.Views
             }
         }
 
-        public static void ShowMessage(string content, IconImage icon,Window owner)
+        public static void ShowMessage(string content, IconImage icon, Window owner)
         {
-            var windowo = new CustomMessageBox(content, icon,owner);
+            var btn1 = new Button
+            {
+                Content = "بلی",
+                Background = new SolidColorBrush(Color.FromRgb(29, 210, 176)),
+                Foreground = Brushes.White,
+                Margin = new Thickness(30, 0, 15, 0),
+                BorderBrush = Brushes.Transparent,
+                Width = 100
+            };
+
+            var windowo = new CustomMessageBox(content, icon, owner);
+            windowo.stackpanelBtns.Children.Add(btn1);
+            btn1.Click += (sender, e) => { Result = CustomMessageboxResult.Yes; windowo.Close(); };
             windowo.ShowDialog();
         }
 
-   
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public static CustomMessageboxResult ShowConfrimMessage(string content, IconImage? icon, CustomMessageBoxButton? button, Window owner)
         {
-            this.Close();
+            if (button == null)
+                button = CustomMessageBoxButton.YesOrNo;
+            if (icon == null)
+                icon = IconImage.Warning;
+
+
+            var window = new CustomMessageBox(content, icon, owner);
+
+
+            if (button == CustomMessageBoxButton.YesOrNo)
+            {
+                var btn1 = new Button
+                {
+                    Content = "بلی",
+                    Background = new SolidColorBrush(Color.FromRgb(29, 210, 176)),
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(30, 0, 15, 0),
+                    BorderBrush = Brushes.Transparent
+                };
+
+                var btn2 = new Button
+                {
+                    Content = "خیر",
+                    Background = new SolidColorBrush(Color.FromRgb(110, 230, 10)),
+                    Foreground = Brushes.White,
+                    BorderBrush = Brushes.Transparent
+                };
+
+
+                btn1.Click += (sender, e) => { Result = CustomMessageboxResult.Yes; window.Close(); };
+                btn2.Click += (sender, e) => { Result = CustomMessageboxResult.No; window.Close(); };
+
+                window.stackpanelBtns.Children.Add(btn1);
+                window.stackpanelBtns.Children.Add(btn2);
+
+                window.ShowDialog();
+
+                return Result;
+            }
+            else if (button == CustomMessageBoxButton.Ok)
+            {
+                var btn1 = new Button
+                {
+                    Content = "بلی",
+                    Background = new SolidColorBrush(Color.FromRgb(110, 230, 10)),
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(30, 0, 15, 0)
+                };
+
+                btn1.Click += (sender, e) => { Result = CustomMessageboxResult.Ok; window.Close(); };
+                window.stackpanelBtns.Children.Add(btn1);
+                window.ShowDialog();
+
+                return Result;
+            }
+
+            return Result;
         }
+
+
 
 
     }
 
 
 
-    public enum IconImage { 
-    
+    public enum IconImage
+    {
+
         Success,
         Failer,
         Warning
+    }
+
+    public enum CustomMessageBoxButton
+    {
+
+        Ok,
+        YesOrNo,
+        Cancel,
+        YesCancel
+    }
+
+    public enum CustomMessageboxResult
+    {
+        Yes,
+        No,
+        Cancel,
+        Ok
     }
 
 

@@ -1,4 +1,5 @@
-﻿using MahdeFooladWPF.Commands;
+﻿using MahdeFooald.Common;
+using MahdeFooladWPF.Commands;
 using MahdeFooladWPF.Views;
 using NSMangament.Application.Models;
 using NSMangament.Application.Services;
@@ -35,7 +36,7 @@ namespace MahdeFooladWPF.ViewModels
         public ICommand OpenNotificationTaskWindow { get; set; }
         public ICommand RestDataCommand => _retriveDataCommand;
         public ICommand TaskListCommand => _taskListCommand;
-
+        public ICommand NormalizedWindowCommand { get; set; }
 
         public string FullName { get => _userManager.User.FullName; }
 
@@ -56,7 +57,17 @@ namespace MahdeFooladWPF.ViewModels
             _taskListCommand = new TaskListCommand(OpenTaskListWindow);
             CloseCommand = new CloseCommand(WindowClose);
             OpenNotificationTaskWindow = new OpenWindowCommand(OpenNotiyWindow);
+            NormalizedWindowCommand = new NormilizedWindowCommand(ChagneWindowState);
         }
+
+        private void ChagneWindowState(object obj)
+        {
+           var window = obj as Window;
+            window.WindowState = WindowState.Normal;
+            window.Visibility = Visibility.Visible;
+            window.Activate();
+        }
+
         private void OpenTaskListWindow(object paramter)
         {
             var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.WholeList);
@@ -66,8 +77,19 @@ namespace MahdeFooladWPF.ViewModels
         }
         private void GetData()
         {
-            if (FillTaksCollection())
-                MessageBox.Show("عملیات با موفقیت انجام شد");
+            try
+            {
+
+                if (FillTaksCollection())
+                    CustomMessageBox.ShowMessage("اطلاعات با موفقیت به روز رسانی شد", IconImage.Success, null);
+                else
+                    CustomMessageBox.ShowMessage("پر به روز رسانی اطلاعات مشکلی پیش آمده در صورت تکرار با پشتیبانی تماس بگیرید", IconImage.Failer, null);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex.Message + "\n Happend while updateing data in ResetDataCommand In main window");
+                CustomMessageBox.ShowMessage(ErrorMessages.DefaultError, IconImage.Failer, null);
+            }
         }
         private bool FillTaksCollection()
         {

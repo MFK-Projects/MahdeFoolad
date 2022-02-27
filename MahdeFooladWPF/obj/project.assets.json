@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.17763": {
+      "Hardcodet.NotifyIcon.Wpf/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "MaterialDesignColors/2.0.4": {
         "type": "package",
         "compile": {
@@ -418,6 +430,29 @@
     }
   },
   "libraries": {
+    "Hardcodet.NotifyIcon.Wpf/1.1.0": {
+      "sha512": "FFEkdRSidMrbMfQVwhCzq6KtSyR1qQojqtiUrkCyjnOOuMf7W3TNQkzFnBBxYxFe7uLk5mz7M38wFh1qdWyfvg==",
+      "type": "package",
+      "path": "hardcodet.notifyicon.wpf/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "hardcodet.notifyicon.wpf.1.1.0.nupkg.sha512",
+        "hardcodet.notifyicon.wpf.nuspec",
+        "icon.png",
+        "lib/net45/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net45/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net462/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net462/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net472/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net472/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/net5.0-windows7.0/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/net5.0-windows7.0/Hardcodet.NotifyIcon.Wpf.xml",
+        "lib/netcoreapp3.1/Hardcodet.NotifyIcon.Wpf.dll",
+        "lib/netcoreapp3.1/Hardcodet.NotifyIcon.Wpf.xml"
+      ]
+    },
     "MaterialDesignColors/2.0.4": {
       "sha512": "l8LfghYjT2mBVp28CAU8UN4GQ6T/euzgGiTwFKy1DPUG8c5rng/CVXXqM5Xof0XAm0MhXgV8yjGRjQ7KOjT/Iw==",
       "type": "package",
@@ -1236,6 +1271,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.17763": [
+      "Hardcodet.NotifyIcon.Wpf >= 1.1.0",
       "MaterialDesignThemes >= 4.3.0",
       "Microsoft.Extensions.DependencyInjection >= 5.0.1",
       "NSManagament.Infrastrucure >= 1.0.0",
@@ -1244,19 +1280,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a.moradi\\.nuget\\packages\\": {}
+    "C:\\Users\\Amir_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "projectUniqueName": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
       "projectName": "MahdeFooladWPF",
-      "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
-      "packagesPath": "C:\\Users\\a.moradi\\.nuget\\packages\\",
-      "outputPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
+      "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\MahdeFooladWPF.csproj",
+      "packagesPath": "C:\\Users\\Amir_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\MahdeFooladWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\a.moradi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amir_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1270,8 +1306,8 @@
         "net5.0-windows10.0.17763": {
           "targetAlias": "net5.0-windows10.0.17763.0",
           "projectReferences": {
-            "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
-              "projectPath": "Z:\\IT\\New folder\\amirtasks\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
+            "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj": {
+              "projectPath": "C:\\Users\\Amir_\\OneDrive\\Desktop\\MFKianApp\\MahdeFoolad\\NSManagament.Infrastrucure\\NSManagament.Infrastrucure.csproj"
             }
           }
         }
@@ -1286,6 +1322,10 @@
       "net5.0-windows10.0.17763": {
         "targetAlias": "net5.0-windows10.0.17763.0",
         "dependencies": {
+          "Hardcodet.NotifyIcon.Wpf": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[4.3.0, )"
@@ -1314,6 +1354,10 @@
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
             "version": "[10.0.17763.22, 10.0.17763.22]"

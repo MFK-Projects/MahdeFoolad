@@ -23,8 +23,8 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <ColorAnimation 
-                                        To="White"
-                                        Duration="0:0:0.4"
+                                        To="#ffb800"
+                                        Duration="0:0:0.1"
                                         Storyboard.TargetProperty="Background.Color"
                                         />
                                 </Storyboard>
@@ -35,8 +35,8 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <ColorAnimation 
-                                        To="White"
-                                        Duration="0:0:0.4"
+                                        To="Transparent"
+                                        Duration="0:0:0.2"
                                         Storyboard.TargetProperty="Background.Color"
                                         />
                                 </Storyboard>
