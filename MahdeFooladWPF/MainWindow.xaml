@@ -27,11 +27,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="13*"/>
             <RowDefinition Height="48*"/>
-            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
 
-        
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -61,7 +60,7 @@
                         Content="{materialDesign:PackIcon Kind=Menu}"
                         Foreground="Orange"
                         BorderBrush="Transparent">
-                   
+
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.Click">
                             <BeginStoryboard>
@@ -97,63 +96,56 @@
                     <TextBlock  Padding="10"
                            FontWeight="SemiBold"
                            Style="{StaticResource vazirFont}"
-                           Text="{Binding Title}"
+                           Text="{Binding Title,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,IsAsync=True}"
                            Foreground="AliceBlue"
                            HorizontalAlignment="Right"
                            TextWrapping="Wrap"/>
 
                     <Separator/>
-
-                    <!--Text="{Binding NotificationDescripton}"-->
+                    
+                    <TextBlock Visibility="Hidden"
+                               x:Name="txtTaskId"
+                               Text="{Binding TaskId}"/>
                     <TextBlock 
                     Foreground="#d3d3d3"
                     MaxHeight="80"
                     Style="{StaticResource vazirFont}"
-                    Text="{Binding Description}"
+                    Text="{Binding Description,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,IsAsync=True}"
                     TextWrapping="Wrap"
                     Padding="10"
-                    FlowDirection="RightToLeft" Height="64"
+                    FlowDirection="RightToLeft" Height="72"
                      />
 
-                    <TextBlock  Text="{Binding RemainigDate,StringFormat=مهلت انجام {0}}"
-                                HorizontalAlignment="Right"/>
-                    <Border
-                        Background="#ced4da"
-                        BorderBrush="AliceBlue"
-                        BorderThickness="3"
-                        CornerRadius="15"
-                        HorizontalAlignment="Left">
-                        <StackPanel
-                            Orientation="Horizontal"
-                            Width="45"
-                            x:Name="Stpanel">
-                            <Button
-                                Content="{materialDesign:PackIcon Kind=ArrowRight}"
-                                Width="45"
-                                Foreground="DarkRed"
+                    <Grid Height="43">
+
+                        <Button
+                                x:Name="btnchanges"
                                 HorizontalAlignment="Left"
-                                Background="Transparent"
-                                Name="ToggleBtn"
-                                Click="ToggleBtn_Click"
-                                BorderBrush="Transparent">
-                            </Button>
-                            <Button Margin="5"/>
-                            <Button Margin="5"/>
-                            <Button Margin="5"/>
-                        </StackPanel>
-                    </Border>
+                                Command="{Binding OpenChangeWidnowCommand}"
+                                CommandParameter="{Binding ElementName=txtTaskId,Path=Text}"
+                                BorderBrush="Transparent"
+                                ToolTip="تغییر وضعیت"
+                                Background="DarkGreen"
+                                Content="{materialDesign:PackIcon Kind=ListStatus}"
+                                Margin="5"/>
+                        <TextBlock 
+                            Foreground="White"
+                            HorizontalAlignment="Center"
+                              Style="{StaticResource vazirFont}"
+                            VerticalAlignment="Bottom"
+                            Text="{Binding RemainingTime,Mode=OneWay,StringFormat=ساعت باقی مانده {0},UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <TextBlock 
+                            Foreground="White"
+                            VerticalAlignment="Bottom"
+                              Style="{StaticResource vazirFont}"
+                            Text="{Binding RemainigDate,UpdateSourceTrigger=PropertyChanged,IsAsync=True,StringFormat=مهلت انجام {0}}"
+                                HorizontalAlignment="Right"/>
+
+                    </Grid>
                 </StackPanel>
             </Border>
         </Grid>
-        <ProgressBar
-            Margin="10,6,10,6"
-            Grid.Row="2"
-            Minimum="0"
-            Maximum="100" 
-            Background="White"
-            Name="progressb"
-            >
-        </ProgressBar>
 
 
 
@@ -352,7 +344,5 @@
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
-
     </Grid>
-    
 </Window>

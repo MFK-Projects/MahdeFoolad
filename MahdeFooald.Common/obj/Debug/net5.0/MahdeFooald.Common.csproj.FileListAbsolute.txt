@@ -10,18 +10,6 @@ D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\Mahd
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
 D:\Projects\FullApplication\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.deps.json
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.pdb
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfoInputs.cache
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfo.cs
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.CoreCompileInputs.cache
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
-C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.deps.json
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
@@ -34,3 +22,15 @@ Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\Mahde
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
 Z:\IT\New folder\amirtasks\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.deps.json
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\ref\MahdeFooald.Common.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\bin\Debug\net5.0\MahdeFooald.Common.pdb
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.AssemblyReference.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfoInputs.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.AssemblyInfo.cs
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.csproj.CoreCompileInputs.cache
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\ref\MahdeFooald.Common.dll
+C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooald.Common\obj\Debug\net5.0\MahdeFooald.Common.pdb

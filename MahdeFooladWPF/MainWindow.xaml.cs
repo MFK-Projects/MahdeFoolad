@@ -35,36 +35,9 @@ namespace MahdeFooladWPF
             this.DataContext = _viewModel = viewModel;
             systemTray.DataContext = _viewModel;
             leastnotyborder.DataContext = _viewModel.LeastTimeNotification;
+            btnchanges.DataContext = _viewModel;
         }
 
-        private void ToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-            DoubleAnimation animation;
-            QuarticEase easing = new();
-            PackIcon icons = new();
-
-
-            easing.EasingMode = EasingMode.EaseInOut;
-
-            if (Stpanel.Width == 260)
-            {
-                icons.Kind = PackIconKind.ArrowRight;
-                ToggleBtn.Content = icons;
-                animation = new(45, _duration);
-            }
-            else
-            {
-                icons.Kind = PackIconKind.ArrowLeft;
-                ToggleBtn.Content = icons;
-                animation = new(260, _duration);
-            }
-
-
-            animation.EasingFunction = easing;
-            Stpanel.BeginAnimation(StackPanel.WidthProperty, animation);
-
-        }
 
         private void TopStackPanel_MouseDowned(object sender, MouseButtonEventArgs e)
         {
@@ -75,6 +48,7 @@ namespace MahdeFooladWPF
         {
             _viewModel.FindLeastTimeNotification?.Execute(null);
             leastnotyborder.DataContext = _viewModel.LeastTimeNotification;
+
         }
 
         private void CloseCommand(object sender, RoutedEventArgs e)

@@ -121,7 +121,7 @@ namespace MahdeFooladWPF.ViewModels
 
             foreach (var item in lst)
             {
-                var task = new TaskModelConverter();
+                TaskModelConverter task = new ();
                 task.FullDescription = item.Description;
                 task.Subject = item.Subject;
                 task.TaskStatus = item.TaskStatus;
@@ -140,7 +140,7 @@ namespace MahdeFooladWPF.ViewModels
             if (!string.IsNullOrEmpty(item.Description))
             {
                 if (item.Description.Length > 40)
-                    task.MiniDescription = item.Description.Substring(0,40) + "...";
+                    task.MiniDescription = item.Description.Substring(0,40);
                 else
                     task.MiniDescription = item.Description;
             }
@@ -172,10 +172,9 @@ namespace MahdeFooladWPF.ViewModels
             if (string.IsNullOrEmpty(Filter))
                 return true;
 
-            if (task.Subject.Contains(Filter)) return true;
+            return task.Subject.Contains(Filter);
 
 
-            return false;
         }
         private bool FilterStatus(object paramter)
         {

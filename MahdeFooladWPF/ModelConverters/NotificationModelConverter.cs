@@ -11,5 +11,6 @@ namespace MahdeFooladWPF.ModelConverters
         public string TaskUrl { get; set; }
         public int RemainingTime { get; set; }
         public string RemainigDate { get; set; }
+        public string TaskId { get; set; }
     }
 }

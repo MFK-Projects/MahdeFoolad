@@ -37,11 +37,13 @@ namespace NSManagament.Infrastrucure.Impelementions
                     throw new Exception($"one or more items passed to the method {nameof(DownlaodStringData)} are null and dont have the value paramtertype :{typeof(DownloadStringModel)} \n paramtername {nameof(downloadModel)}");
                 }
 
-                _client.Credentials = new NetworkCredential(
-                    downloadModel.UserName,
-                    downloadModel.Password,
-                    downloadModel.DomainName
-                    );
+                //_client.Credentials = new NetworkCredential(
+                //    downloadModel.UserName,
+                //    downloadModel.Password,
+                //    downloadModel.DomainName
+                //    );
+
+                _client.Credentials = new NetworkCredential("a.moradi", "r", "KIAN");
 
                 _client.Headers.Add("OData-Version", "4.0");
 

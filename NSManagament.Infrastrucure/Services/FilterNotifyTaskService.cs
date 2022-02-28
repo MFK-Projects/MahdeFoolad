@@ -15,7 +15,6 @@ namespace NSManagament.Infrastrucure.Services
 
             foreach (var task in tasks)
             {
-
                 if (task.PriorityCode == 2 && task.RemainingDay > 0 && task.RemainingDay < 5)
                 {
                     notifyTask.Add(task);
