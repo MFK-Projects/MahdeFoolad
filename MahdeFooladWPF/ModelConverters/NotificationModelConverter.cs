@@ -9,5 +9,7 @@ namespace MahdeFooladWPF.ModelConverters
         public string Description { get; set; }
         public DateTime TaskSechaure { get; set; }
         public string TaskUrl { get; set; }
+        public int RemainingTime { get; set; }
+        public string RemainigDate { get; set; }
     }
 }

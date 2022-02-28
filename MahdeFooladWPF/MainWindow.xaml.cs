@@ -34,6 +34,7 @@ namespace MahdeFooladWPF
             InitializeComponent();
             this.DataContext = _viewModel = viewModel;
             systemTray.DataContext = _viewModel;
+            leastnotyborder.DataContext = _viewModel.LeastTimeNotification;
         }
 
         private void ToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -72,14 +73,8 @@ namespace MahdeFooladWPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Dispatcher.Invoke(() =>
-            {
-                _viewModel.UpdateProggressBarCommand?.Execute(progressb);
-            });
-            
-            
-
-            _viewModel.RetriveDataCommand?.Execute(null);
+            _viewModel.FindLeastTimeNotification?.Execute(null);
+            leastnotyborder.DataContext = _viewModel.LeastTimeNotification;
         }
 
         private void CloseCommand(object sender, RoutedEventArgs e)

@@ -115,11 +115,7 @@ namespace MahdeFooladWPF.ViewModels
             List<TaskModel> lst;
 
             if (_lstType == TaskListType.NotifyList)
-            {
-                FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
-                
-                lst = FilterNotifyTaskService.NotifyTasks;
-            }
+                lst = FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
             else
                 lst = _utilityService.RetriveData().Result;
 
@@ -131,12 +127,11 @@ namespace MahdeFooladWPF.ViewModels
                 task.TaskStatus = item.TaskStatus;
                 task.TaskType = item.TaskType;
                 task.RemainginHour = item.RemaingHour.ToString();
-                task.RemainingDays = DateTime.Now.AddDays(item.RemainingDay).ToString("yyyy/MM/dd");
+                task.RemainingDays = DateTime.Now.AddDays((item.RemainingDay - 1)).ToString("yyyy/MM/dd");
                 task.TaskId = item.ActivityId;
 
                 TaskCoditions(item, task);
                 TaskCollection.Add(task);
-
             }
         }
         private static void TaskCoditions(TaskModel item, TaskModelConverter task)

@@ -1,6 +1,8 @@
 ﻿using MahdeFooald.Common;
 using MahdeFooladWPF.Commands;
+using MahdeFooladWPF.ModelConverters;
 using MahdeFooladWPF.Views;
+using NSManagament.Infrastrucure.Services;
 using NSMangament.Application.Models;
 using NSMangament.Application.Services;
 using Serilog;
@@ -26,13 +28,26 @@ namespace MahdeFooladWPF.ViewModels
         private ICommand _retriveDataCommand;
         private ICommand _taskListCommand;
         private readonly IUserMananger _userManager;
+        private NotificationModelConverter _leastTimeNotification;
+        private readonly System.Timers.Timer _retriveTimer = new System.Timers.Timer();
+        private readonly double _rndInterval = new Random().Next(60000, (60000 * 3));
         #endregion
+
+        public NotificationModelConverter LeastTimeNotification 
+        {
+            get =>_leastTimeNotification;
+            set
+            {
+                _leastTimeNotification = value;
+                OnPropertyChaned(nameof(LeastTimeNotification));
+            }
+        }
 
 
         public ICommand CloseCommand { get; set; }
         public ICommand MinimizedCommand { get; set; }
         public ICommand UpdateProggressBarCommand { get; set; }
-        public ICommand RetriveDataCommand { get; set; }
+        public ICommand FindLeastTimeNotification { get; set; }
         public ICommand OpenNotificationTaskWindow { get; set; }
         public ICommand RestDataCommand => _retriveDataCommand;
         public ICommand TaskListCommand => _taskListCommand;
@@ -58,11 +73,12 @@ namespace MahdeFooladWPF.ViewModels
             CloseCommand = new CloseCommand(WindowClose);
             OpenNotificationTaskWindow = new OpenWindowCommand(OpenNotiyWindow);
             NormalizedWindowCommand = new NormilizedWindowCommand(ChagneWindowState);
+            FindLeastTimeNotification = new FindLeastTimeNotificationCommnad(GetLeastTimeNotification);
         }
 
         private void ChagneWindowState(object obj)
         {
-           var window = obj as Window;
+            var window = obj as Window;
             window.WindowState = WindowState.Normal;
             window.Visibility = Visibility.Visible;
             window.Activate();
@@ -83,7 +99,7 @@ namespace MahdeFooladWPF.ViewModels
                 if (FillTaksCollection())
                     CustomMessageBox.ShowMessage("اطلاعات با موفقیت به روز رسانی شد", IconImage.Success, null);
                 else
-                    CustomMessageBox.ShowMessage("پر به روز رسانی اطلاعات مشکلی پیش آمده در صورت تکرار با پشتیبانی تماس بگیرید", IconImage.Failer, null);
+                    CustomMessageBox.ShowMessage("هیج  دیتای یافت نشد", IconImage.Failer, null);
             }
             catch (Exception ex)
             {
@@ -93,11 +109,25 @@ namespace MahdeFooladWPF.ViewModels
         }
         private bool FillTaksCollection()
         {
-            var checkdata = _utilityService.RetriveData();
+            var checkdata = _utilityService.RetriveData().Result;
 
-            if (checkdata.Result != null)
+            if (checkdata != null)
             {
-                return true;
+                var task = FilterNotifyTaskService.LeastTimeNotification(FilterNotifyTaskService.FilterNotify(checkdata));
+                
+                if (task != null)
+                {
+                    _leastTimeNotification = new NotificationModelConverter
+                    {
+                        Description = task.Description,
+                        TaskUrl = RequestUrl.BuildUrl(UrlBuilderMode.SingleTask, null, task.ActivityId, null),
+                        Title = task.Subject,
+                        RemainigDate = DateTime.Now.AddDays(task.RemainingDay).ToString("yyyy/MM/dd"),
+                        RemainingTime = task.RemaingHour
+                    };
+
+                    return true;
+                }
             }
 
             return false;
@@ -122,13 +152,25 @@ namespace MahdeFooladWPF.ViewModels
             var taskWindow = new TasksListView(vmModel);
             taskWindow.ShowDialog();
         }
+        private void GetLeastTimeNotification(object paramter)
+        {
+            try
+            {
+                _retriveTimer.AutoReset = true;
+                _retriveTimer.Interval = 40000;
+                _retriveTimer.Elapsed += _retriveTimer_Elapsed;
+                _retriveTimer.Start();
+            }
+            catch (Exception ex)
+            {
+                _logger.Equals($"Error happend in the GetLeastTiemNotification Main Window error Message :{ex.Message} Inner Exception :{ex.InnerException?.Message}");
+                CustomMessageBox.ShowMessage(ErrorMessages.DefaultError, IconImage.Failer, null);
+            }
+        }
 
-
-        /*
-        Task<List<TaskModel>> MostRecentTasks();
-        Task<List<TaskModel>> ExpiredTasks();
-        Task<List<TaskModel>> HighPriorityTasks();
-        TaskModel MostPriorityTask();
-        TaskModel ExpireingTask();*/
+        private void _retriveTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            FillTaksCollection();
+        }
     }
 }
