@@ -3,6 +3,7 @@ using MahdeFooladWPF.Commands;
 using MahdeFooladWPF.ModelConverters;
 using MahdeFooladWPF.Views;
 using NSMangament.Application.Services;
+using Serilog;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,11 +16,13 @@ namespace MahdeFooladWPF.ViewModels
     {
         private TaskModelConverter _task;
         private readonly IUtilityService _utilityService;
+        private readonly ILogger _logger;
         public ICommand ChangeStatusCommand { get; set; }
         public ICommand ClosedCommand { get; set; }
-        public ChangeStatusViewModel(IUtilityService utilityService, TaskModelConverter task)
+        public ChangeStatusViewModel(IUtilityService utilityService, TaskModelConverter task, ILogger logger)
         {
             RegisterCommands();
+            _logger = logger;
             _utilityService = utilityService;
             _task = task;
         }
@@ -44,8 +47,9 @@ namespace MahdeFooladWPF.ViewModels
                     CustomMessageBox.ShowMessage("عملیات باموفقیت انجام شد", IconImage.Success, null);
                 }
             }
-            catch 
+            catch(Exception ex)
             {
+                _logger.Error($"error happend while excuting the ChangeTaskStatus {ex.Message} ");
                 CustomMessageBox.ShowMessage(ErrorMessages.DefaultError, IconImage.Failer, null);
             }
         }

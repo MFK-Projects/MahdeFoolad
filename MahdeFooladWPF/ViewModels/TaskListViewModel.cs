@@ -6,6 +6,7 @@ using NSManagament.Infrastrucure.Services;
 using NSMangament.Application.Enums;
 using NSMangament.Application.Models;
 using NSMangament.Application.Services;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,6 +26,7 @@ namespace MahdeFooladWPF.ViewModels
         private readonly IUtilityService _utilityService;
         private string filter = string.Empty;
         private TaskListType _lstType;
+        private readonly ILogger _logger;
         private string tsakTypeChange;
         public string TaskType { get; set; }
         public string TaskTypeChange
@@ -83,11 +85,12 @@ namespace MahdeFooladWPF.ViewModels
         #endregion
 
 
-        public TaskListViewModel(IUtilityService utilityService,TaskListType lsttype)
+        public TaskListViewModel(IUtilityService utilityService,TaskListType lsttype,ILogger logger)
         {
             TaskCollection = new();
             _lstType = lsttype;
             _utilityService = utilityService;
+            _logger = logger;
             RegisterCommands();
 
         }
@@ -102,9 +105,16 @@ namespace MahdeFooladWPF.ViewModels
         }
         private void OpenChangeTaskWindow(object paramter)
         {
-            var vmModel = new ChangeStatusViewModel(_utilityService, SingleTask);
-            ChangeStatusWindow window = new (vmModel);
-            window.ShowDialog();
+            try
+            {
+                var vmModel = new ChangeStatusViewModel(_utilityService, SingleTask, _logger);
+                ChangeStatusWindow window = new(vmModel);
+                window.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex.Message);
+            }
         }
         private void ShowDetail(TaskModelConverter model)
         {
@@ -112,26 +122,33 @@ namespace MahdeFooladWPF.ViewModels
         }
         private void GetAllData()
         {
-            List<TaskModel> lst;
-
-            if (_lstType == TaskListType.NotifyList)
-                lst = FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
-            else
-                lst = _utilityService.RetriveData().Result;
-
-            foreach (var item in lst)
+            try
             {
-                TaskModelConverter task = new ();
-                task.FullDescription = item.Description;
-                task.Subject = item.Subject;
-                task.TaskStatus = item.TaskStatus;
-                task.TaskType = item.TaskType;
-                task.RemainginHour = item.RemaingHour.ToString();
-                task.RemainingDays = DateTime.Now.AddDays((item.RemainingDay - 1)).ToString("yyyy/MM/dd");
-                task.TaskId = item.ActivityId;
+                List<TaskModel> lst;
 
-                TaskCoditions(item, task);
-                TaskCollection.Add(task);
+                if (_lstType == TaskListType.NotifyList)
+                    lst = FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
+                else
+                    lst = _utilityService.RetriveData().Result;
+
+                foreach (var item in lst)
+                {
+                    TaskModelConverter task = new();
+                    task.FullDescription = item.Description;
+                    task.Subject = item.Subject;
+                    task.TaskStatus = item.TaskStatus;
+                    task.TaskType = item.TaskType;
+                    task.RemainginHour = item.RemaingHour.ToString();
+                    task.RemainingDays = DateTime.Now.AddDays((item.RemainingDay - 1)).ToString("yyyy/MM/dd");
+                    task.TaskId = item.ActivityId;
+
+                    TaskCoditions(item, task);
+                    TaskCollection.Add(task);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex.Message);
             }
         }
         private static void TaskCoditions(TaskModel item, TaskModelConverter task)

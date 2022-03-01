@@ -7,6 +7,7 @@ using NSMangament.Application.Models;
 using NSMangament.Application.Services;
 using Serilog;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -30,7 +31,11 @@ namespace MahdeFooladWPF.ViewModels
         private ICommand _taskListCommand;
         private readonly IUserMananger _userManager;
         private NotificationModelConverter _leastTimeNotification;
-        private readonly System.Timers.Timer _retriveTimer = new ();
+        private readonly INotificationService _notificationService;
+        private List<TaskModel> lstTasks = new List<TaskModel>();
+        private static readonly object _locker = new object();
+        private readonly System.Timers.Timer _retriveTimer = new();
+        private readonly System.Timers.Timer _notificationTimer = new();
         private readonly double _rndInterval = new Random().Next(60000, (60000 * 3));
         #endregion
 
@@ -57,11 +62,12 @@ namespace MahdeFooladWPF.ViewModels
         #endregion
         public string FullName { get => _userManager.User.FullName; }
 
-        public MainWindowViewModel(ILogger logger, IUtilityService utilityService, IUserMananger userMananger)
+        public MainWindowViewModel(ILogger logger, IUtilityService utilityService, IUserMananger userMananger, INotificationService notificationServcie)
         {
             _utilityService = utilityService;
             _userManager = userMananger;
             _logger = logger;
+            _notificationService = notificationServcie;
             RegisterEvents();
         }
 
@@ -87,7 +93,7 @@ namespace MahdeFooladWPF.ViewModels
                 var vmModel = new ChangeStatusViewModel(_utilityService, new TaskModelConverter
                 {
                     TaskId = obj as string
-                });
+                },_logger);
                 ChangeStatusWindow window = new(vmModel);
                 window.ShowDialog();
             }
@@ -97,13 +103,11 @@ namespace MahdeFooladWPF.ViewModels
                 CustomMessageBox.ShowMessage("با پشتیانی تماس بگیرید", IconImage.Failer, null);
             }
         }
-
-
         private void OpenTaskListWindow(object paramter)
         {
             try
             {
-                var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.WholeList);
+                var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.WholeList,_logger);
                 var tasklistwindow = new TasksListView(vmModel);
 
                 tasklistwindow.ShowDialog();
@@ -133,33 +137,35 @@ namespace MahdeFooladWPF.ViewModels
         {
             try
             {
-                var checkdata = _utilityService.RetriveData().Result;
-
-
-                if (checkdata != null)
+                lock (_locker)
                 {
-                    var task = FilterNotifyTaskService.LeastTimeNotification(FilterNotifyTaskService.FilterNotify(checkdata));
+                    lstTasks = FilterNotifyTaskService.FilterNotify(_utilityService.RetriveData().Result);
 
-                    if (task != null)
+
+                    if (lstTasks.Count > 0)
                     {
-                        _leastTimeNotification = new NotificationModelConverter
-                        {
-                            Description = task.Description ?? "توضیحاتی  ندارد‍",
-                            TaskUrl = RequestUrl.BuildUrl(UrlBuilderMode.SingleTask, null, task.ActivityId, null),
-                            Title = task.Subject,
-                            RemainigDate = DateTime.Now.AddDays(task.RemainingDay).ToString("yyyy/MM/dd"),
-                            RemainingTime = task.RemaingHour,
-                            TaskId = task.ActivityId
-                        };
+                        var task = FilterNotifyTaskService.LeastTimeNotification(FilterNotifyTaskService.FilterNotify(lstTasks));
 
-                        if (taskcount == checkdata.Count)
-                            return false;
-                        else
+                        if (task != null)
                         {
-                            taskcount = checkdata.Count;
-                            return true;
+                            _leastTimeNotification = new NotificationModelConverter
+                            {
+                                Description = task.Description ?? "توضیحاتی  ندارد‍",
+                                TaskUrl = RequestUrl.BuildUrl(UrlBuilderMode.SingleTask, null, task.ActivityId, null),
+                                Title = task.Subject,
+                                RemainigDate = DateTime.Now.AddDays(task.RemainingDay).ToString("yyyy/MM/dd"),
+                                RemainingTime = task.RemaingHour,
+                                TaskId = task.ActivityId
+                            };
+
+                            if (taskcount == lstTasks.Count)
+                                return false;
+                            else
+                            {
+                                taskcount = lstTasks.Count;
+                                return true;
+                            }
                         }
-
                     }
                 }
 
@@ -193,7 +199,7 @@ namespace MahdeFooladWPF.ViewModels
         {
             try
             {
-                var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.NotifyList);
+                var vmModel = new TaskListViewModel(_utilityService, NSMangament.Application.Enums.TaskListType.NotifyList,_logger);
                 var taskWindow = new TasksListView(vmModel);
                 taskWindow.ShowDialog();
             }
@@ -207,17 +213,90 @@ namespace MahdeFooladWPF.ViewModels
         {
             try
             {
+
                 FillTaksCollection();
 
-                _retriveTimer.AutoReset = true;
-                _retriveTimer.Interval = _rndInterval;
-                _retriveTimer.Elapsed += _retriveTimer_Elapsed;
-                _retriveTimer.Start();
+                Task.Factory.StartNew(() =>
+                {
+
+                    _notificationService.SendNotification(new CreationNotificationModel
+                    {
+                        AurgmentData = "http://80.210.16.4:8585",
+                        Button = null,
+                        NotificationArgument = "http://80.210.16.4:8585",
+                        TaskUrl = null,
+                        Text = new string[] { $"{_userManager.User.FullName} خوش آمدید" },
+                        ToastDuration = Microsoft.Toolkit.Uwp.Notifications.ToastDuration.Short,
+                        ToastScenario = Microsoft.Toolkit.Uwp.Notifications.ToastScenario.Alarm,
+                        Titel = String.Empty
+                    });
+
+                    _notificationService.SendNotification(new CreationNotificationModel
+                    {
+                        AurgmentData = String.Empty,
+                        Button = null,
+                        NotificationArgument = String.Empty,
+                        TaskUrl = null,
+                        Text = new string[] { $" وظایف شما برای امروز  {lstTasks.Count} " },
+                        ToastDuration = Microsoft.Toolkit.Uwp.Notifications.ToastDuration.Short,
+                        ToastScenario = Microsoft.Toolkit.Uwp.Notifications.ToastScenario.Alarm,
+                        Titel = String.Empty
+                    });
+
+
+                    _notificationTimer.AutoReset = true;
+                    _notificationTimer.Interval = 180000;
+                    _notificationTimer.Elapsed += _notificationTimer_Elapsed;
+                    _notificationTimer.Start();
+
+
+                    _retriveTimer.AutoReset = true;
+                    _retriveTimer.Interval = _rndInterval;
+                    _retriveTimer.Elapsed += _retriveTimer_Elapsed;
+                    _retriveTimer.Start();
+                }).Wait(3000);
+
+                _notificationTimer_Elapsed(null,null);
+
             }
             catch (Exception ex)
             {
                 _logger.Equals($"Error happend in the GetLeastTiemNotification Main Window error Message :{ex.Message} Inner Exception :{ex.InnerException?.Message}");
                 CustomMessageBox.ShowMessage(ErrorMessages.DefaultError, IconImage.Failer, null);
+            }
+        }
+
+        private void _notificationTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                if (lstTasks.Count > 0)
+                {
+                    var lstcreatinalnotification = new List<CreationNotificationModel>();
+
+                    foreach (var item in lstTasks)
+                    {
+                        if (item.TaskStatus == "100000003" || item.TaskStatus == "100000005")
+                            continue;
+
+                        lstcreatinalnotification.Add(new CreationNotificationModel
+                        {
+                            AurgmentData = null,
+                            Button = null,
+                            NotificationArgument = null,
+                            TaskUrl = RequestUrl.BuildUrl(UrlBuilderMode.SingleTask, null, item.ActivityId, null),
+                            Text = new string[] { item.Subject, item.Description, $"زمان باقی مانده {item.RemaingHour}" }
+                        });
+                    }
+
+
+
+                    _notificationService.SendNotification(lstcreatinalnotification);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"error happend while running the send notification method  Error Message :{ex.Message} \t Inner exception :{ex.InnerException?.Message}");
             }
         }
 

@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Amir_\OneDrive\Desktop\MFKianApp\MahdeFoolad\MahdeFooladWPF\App.xaml
 7763710327
 
-332084583007
+32-669951021
 217-1286119508
 MainWindow.xaml;UserControls\TaskItemUserControl.xaml;Views\ChangeStatusWindow.xaml;Views\CustomMessageBox.xaml;Views\LoginWindow.xaml;Views\SettingWindow.xaml;Views\TasksListView.xaml;
 
-True
+False
 

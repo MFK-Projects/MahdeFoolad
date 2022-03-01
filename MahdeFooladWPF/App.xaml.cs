@@ -32,6 +32,7 @@ namespace MahdeFooladWPF
             _serviceProvider = new ServiceCollection()
                                     .AddSingleton<IWebRequest, WebRequestService>(x => new WebRequestService(_logger))
                                     .AddSingleton<IUserMananger, UserManagerService>(x => new UserManagerService(x.GetRequiredService<IWebRequest>()))
+                                    .AddSingleton<INotificationService,NotificationService>(x=>new NotificationService(_logger))
                                     .AddScoped<IUtilityService, UtilityService>(x => new UtilityService(x.GetRequiredService<IWebRequest>(), x.GetRequiredService<IUserMananger>()))
                                     .BuildServiceProvider();
 
@@ -41,7 +42,8 @@ namespace MahdeFooladWPF
 
             var _userservice = _serviceProvider.GetService<IUserMananger>();
             var _uilityservice = _serviceProvider.GetService<IUtilityService>();
-            _mainViewModel = new (_logger, _uilityservice, _userservice);
+            var _notificationService = _serviceProvider.GetService<INotificationService>();
+            _mainViewModel = new (_logger, _uilityservice, _userservice,_notificationService);
 
             if (string.IsNullOrEmpty(_userservice.User.Password))
             {

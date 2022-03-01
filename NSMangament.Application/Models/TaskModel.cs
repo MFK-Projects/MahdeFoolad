@@ -43,7 +43,7 @@ namespace NSMangament.Application.Models
         //[JsonProperty("TaskRate")]
         //public double TaskRate { get; set; }
         
-        [JsonProperty("new_notification_threshold")]
+        [JsonProperty("new_notification_threshold",NullValueHandling =NullValueHandling.Ignore)]
         public double Threshold { get; set; }
     }
 }
